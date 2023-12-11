@@ -1,0 +1,30 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.Email.EmailCaNhan.frmThietLapEmailCaNhan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.Email.EmailCaNhan"
+        mc:Ignorable="d"
+        Title="frmThietLapEmailCaNhan" Height="450" Width="800">
+    <StackPanel x:Name="pnlHienThi">
+        <Border CornerRadius="10" Margin="20,15,20,0" Background="{DynamicResource #FFFFFF}">
+            <StackPanel>
+                <TextBlock Text="Thiết lập Email" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0"></TextBlock>
+                <TextBlock Text="Thiết lập Email để gửi mail dễ dàng" FontSize="15" Foreground="{DynamicResource #474747}" Margin="20,15,0,0"></TextBlock>
+                <TextBlock Text="Lưu ý: Việc sử dụng và chuyển đổi từ AMIS Bán Hàng sang bất cứ ứng dụng nào khác thông tin nhận được từ Google API sẽ luôn tuân thủ theo chính sách dữ liệu người dùng của Google (Google API Services User Data Policy), trong đó bao gồm cả yêu cầu về giới hạn sử dụng (Limited Use requirements)." TextWrapping="Wrap" FontSize="16" Foreground="{DynamicResource #474747}" Margin="20,0,0,0"></TextBlock>
+                <Border Width="205" Height="205" HorizontalAlignment="Left" Margin="20,10,0,20" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                    </Border.Effect>
+                    <StackPanel>
+                        <Image Source="/Resource/Img/Group 1000003197.png" Width="51" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                        <TextBlock Text="POP3/IMAP" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                        <Border x:Name="btnKetNoi" MouseLeftButtonUp="btnKetNoi_MouseLeftButtonUp" Cursor="Hand" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #34B632}" Margin="0,20,0,0">
+                            <TextBlock x:Name="tblKetNoi" Text="Đã kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #34B632}"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>

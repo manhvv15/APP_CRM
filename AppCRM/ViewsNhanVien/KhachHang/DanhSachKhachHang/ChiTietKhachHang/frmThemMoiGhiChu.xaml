@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="AppCRM.Views.KhachHang.DanhSachKhachHangNhanVien.ChiTietKhachHangNhanVien.frmThemMoiGhiChuNhanVien"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHangNhanVien.ChiTietKhachHangNhanVien"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.5" MouseDown="Rectangle_MouseDown"></Rectangle>
+
+        <Border BorderThickness="1" BorderBrush="{DynamicResource #aaa}" CornerRadius="10,10,10,10" Width="500" Height="312">
+            <!--<Border.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+        </Border.Effect>-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="179*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"  Background="{DynamicResource #4C5BD4}" CornerRadius="10,10,0,0">
+
+                    <DockPanel>
+                        <TextBlock x:Name="textTieuDe" Text="Thêm ghi chú" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="190,0,0,0" FontFamily="Roboto"></TextBlock>
+                        <Path x:Name="btnClose" MouseLeftButtonUp="btnClose_MouseLeftButtonUp" Data="{DynamicResource iconClose}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                    </DockPanel>
+                </Border>
+                <Border Grid.Row="1" Background="{DynamicResource #FFFFFF}">
+
+                    <StackPanel>
+                        <WrapPanel>
+                            <TextBlock Text="Nội dung ghi chú" FontSize="15" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" Margin="25,20,0,0"></TextBlock>
+                            <TextBlock Text="*" FontSize="15" FontWeight="DemiBold" Foreground="{DynamicResource #FF3333}" VerticalAlignment="Center" Margin="5,20,0,0"></TextBlock>
+                        </WrapPanel>
+                        <Border CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="15,5,15,0" Height="108">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="44*"/>
+                                    <ColumnDefinition Width="13*"/>
+                                    <ColumnDefinition Width="362*"/>
+                                    <ColumnDefinition Width="0*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Background="Transparent" x:Name="tb_NoiDungGhiChu" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,5,-3,-3" Padding="3,3,0,0" Grid.ColumnSpan="4" TextWrapping="Wrap"/>
+
+                                <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập nội dung ghi chú" IsHitTestVisible="False" VerticalAlignment="Top" Margin="8,7,-10,11" Grid.ColumnSpan="4">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tb_NoiDungGhiChu, Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+
+                            </Grid>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Background="{DynamicResource #FFFFFF}" CornerRadius="0,0,10,10" >
+                    <DockPanel HorizontalAlignment="Center">
+                        <Border x:Name="btnHuy" MouseLeftButtonUp="btnHuy_MouseLeftButtonUp" Margin="0,0,30,0" Cursor="Hand" Width="140" Height="36" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}">
+                            <TextBlock Text="Huỷ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #4C5BD4}" FontWeight="DemiBold"></TextBlock>
+                        </Border>
+                        <Border x:Name="btnDongY" Cursor="Hand" Width="140" Height="36" CornerRadius="5" Background="{DynamicResource #4C5BD4}" MouseLeftButtonUp="btnDongY_MouseLeftButtonUp">
+                            <TextBlock Text="Đồng ý" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                        </Border>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

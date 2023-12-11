@@ -1,0 +1,296 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.Email.EmailCaNhan.frmThietLapEmail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.Email.EmailCaNhan"
+        mc:Ignorable="d"
+        Title="frmThietLapEmail" Height="1100" Width="800">
+    <StackPanel x:Name="pnlHienThi">
+        <Border  CornerRadius="10" Margin="20,15,20,0" Background="{DynamicResource #FFFFFF}">
+            <StackPanel>
+                <Border>
+                    <StackPanel>
+                        <TextBlock Text="Thiết lập Email" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <TextBlock Text="Thiết lập server Email để hệ thống thực hiện gửi các Email thông báo như thông báo bàn giao công việc, thông báo phê duyệt, Gửi Email từ quy trình làm việc, quy trình tự động chăm sóc,..." FontSize="15" Foreground="{DynamicResource #474747}" Margin="10,10,0,0" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="Thông tin máy chủ" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <TextBlock Text="Máy chủ mail" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="tb_NhapTenMayChuMail" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập tên máy chủ mail" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_NhapTenMayChuMail, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <TextBlock Text="Cổng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="tb_Cong" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_Cong, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <TextBlock Text="Địa chỉ Email gửi" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="tb_DiaChiEmailGui" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập địa chỉ email gửi" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_DiaChiEmailGui, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                        </Grid>
+
+                        <TextBlock Text="Tên hiển thị" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" Width="450" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="tb_TenHienThi" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập tên hiển thị" IsHitTestVisible="False" HorizontalAlignment="Left" Width="450" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_TenHienThi, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <TextBlock Text="Tên đăng nhập" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="tb_TenDangNhap" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập tên đăng nhập" IsHitTestVisible="False" HorizontalAlignment="Left" Width="450" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_TenDangNhap, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <TextBlock Text="Mật khẩu" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}" Margin="10,5,0,0">
+                                <Grid Height="37">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="37*"/>
+                                        <ColumnDefinition Width="312*"/>
+                                        <ColumnDefinition Width="0*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="tb_MatKhau" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,8,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập mật khẩu" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tb_MatKhau, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <TextBlock Text="Phương thức bảo mật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                        <DockPanel>
+                            <RadioButton Content="Không" FontSize="15" Margin="15,0,0,0"></RadioButton>
+                            <RadioButton Content="TLS" FontSize="15" Margin="15,0,0,0"></RadioButton>
+                            <RadioButton Content="SSL" FontSize="15" Margin="15,0,0,0"></RadioButton>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <Border Width="140" Height="36" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" CornerRadius="5" HorizontalAlignment="Left" Margin="10,10,0,0">
+                    <TextBlock Text="Kiểm tra thiết lập" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                </Border>
+                <TextBlock Text="Thông tin máy chủ" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                <TextBlock Text="Số mail/1 lần gửi" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Margin="10,5,0,0" Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="0*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="37" VerticalAlignment="Center" x:Name="tb_NhapSoMail" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập" IsHitTestVisible="False" HorizontalAlignment="Left" Width="350" VerticalAlignment="Center" Margin="8,6,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tb_NhapSoMail, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+                <TextBlock Text="Số mail/1 lần gửi" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="10,10,0,0"></TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Margin="10,5,0,0" Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="0*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="37" VerticalAlignment="Center" x:Name="tb_ThoiGianGiuaCacLanGui" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập" IsHitTestVisible="False" VerticalAlignment="Center" Margin="8,6,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tb_ThoiGianGiuaCacLanGui, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+                <DockPanel x:Name="pnlKetNoi" Margin="10,20,0,10" HorizontalAlignment="Left">
+                    <Border Cursor="Hand" Width="138" Height="36" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" CornerRadius="5" Margin="0,0,50,0">
+                        <TextBlock Text="Huỷ" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                    </Border>
+                    <Border x:Name="btnLuu" MouseLeftButtonUp="btnLuu_MouseLeftButtonUp" Cursor="Hand" Width="138" Height="36" CornerRadius="5" Background="{DynamicResource #4C5BD4}">
+                        <TextBlock Text="Lưu" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                    </Border>
+                </DockPanel>
+                <DockPanel x:Name="pnlHuyKetNoi" Margin="10,20,0,10" HorizontalAlignment="Left">
+                    <Border x:Name="btnHuyKetNoi" MouseLeftButtonUp="btnHuyKetNoi_MouseLeftButtonUp" Cursor="Hand" Width="138" Height="36" BorderThickness="1" BorderBrush="{DynamicResource #FF3333}" CornerRadius="5" Margin="0,0,50,0" Background="{DynamicResource #FFFFFF}">
+                        <TextBlock Text="Huỷ kết nối" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FF3333}"></TextBlock>
+                    </Border>
+                    <Border Cursor="Hand" Width="138" Height="36" CornerRadius="5" Background="{DynamicResource #4C5BD4}">
+                        <TextBlock Text="Cập nhật" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+
+</Window>

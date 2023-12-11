@@ -1,0 +1,24 @@
+﻿<Window x:Class="AppCRM.Views.frmThongBaoThanhCong"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="frmThongBaoThanhCong" Height="250" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Path Grid.Row="0" Data="{DynamicResource iconThanhCong2}" Fill="{DynamicResource #34B632}" HorizontalAlignment="Center"></Path>
+        <DockPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Lưu dữ liệu thành công" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+        </DockPanel>
+        <Border x:Name="btnDong" MouseLeftButtonUp="btnDong_MouseLeftButtonUp" Grid.Row="2" Width="466" Height="32" CornerRadius="6" Background="{DynamicResource #4C5BD4}">
+            <TextBlock Text="Đóng" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+        </Border>
+    </Grid>
+</Window>

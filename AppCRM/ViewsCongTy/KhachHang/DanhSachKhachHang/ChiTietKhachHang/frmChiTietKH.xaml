@@ -1,0 +1,601 @@
+﻿<Page x:Class="AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang.frmChiTietKH"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang"
+        mc:Ignorable="d"
+        Title="frmChiTietKH" Height="3000" Width="1500">
+    <StackPanel x:Name="pnlHienThi">
+        <Border CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" CornerRadius="10,10,0,0" Height="50" Background="{DynamicResource #4C5BD4}">
+                    <TextBlock Text="Thông tin khách hàng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="15,0,0,0"></TextBlock>
+                </Border>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Margin="20,15,0,0" Text="Ảnh" FontSize="20" Foreground="{DynamicResource #474747}" FontWeight="DemiBold" TextDecorations="Underline"></TextBlock>
+                    <Border Margin="20,15,0,0" Width="86" Height="86" HorizontalAlignment="Left" CornerRadius="86" BorderThickness="1" BorderBrush="{DynamicResource #474747}">
+                        <Border.Background>
+                            <ImageBrush x:Name="ImageAnhKH"></ImageBrush>
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
+                <TextBlock Grid.Row="2" Text="Thông tin chung" FontSize="20" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0" TextDecorations="Underline"></TextBlock>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="colMaKH"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Mã khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textMaKhachHang" Text="Chưa cập nhật"  FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+
+                        <!--<Line x:Name="lineMaKH" Margin="0 15 0 0" X1="0" Y1="0" X2="1000" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />-->
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Tên khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTenKhachHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Tên viết tắt:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTenVietTat" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Mã số thuế:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textMaSoThue" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Điện thoại:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textDienThoai" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="1">
+                        <DockPanel>
+                            <TextBlock Text="Email:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textEmail" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Nguồn khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNguonKhachHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Phân loại khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textPhanLoaiKhachHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Lĩnh vực:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textLinhVuc" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Loại hình:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textLoaiHinh" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Ngành nghề:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNganhNghe" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Nhóm khách hàng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNhomKhachHangCha" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Nhân viên phụ trách:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <DockPanel HorizontalAlignment="Right">
+                                <Path Data="{DynamicResource iconNguoi3}" Fill="{DynamicResource #2A38A2}" Margin="0,0,7,0"></Path>
+                                <TextBlock x:Name="textNhanVienPhuTrach" Text="Mã khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            </DockPanel>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Tình trạng khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTinhTrangKhachHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                
+                <TextBlock Grid.Row="11" Text="Thông tin viết hoá đơn" FontSize="20" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0" TextDecorations="Underline"></TextBlock>
+                <Grid Grid.Row="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Quốc gia" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textQuocGia" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Tỉnh/Thành phố:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTinhThanhPho" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="13">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Quận/Huyện:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textQuanHuyen" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Phường/Xã:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textPhuongXa" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="14">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Số nhà, đường phố:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textSoNhaDuongPho" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Mã vùng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textMaVung" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Địa chỉ hoá đơn:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textDiaChiHoaDon" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Địa chỉ email nhận hoá đơn(email):" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textDiaChiEmailNhanHD" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Grid.Row="16" Text="Thông tin giao hàng" FontSize="20" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0" TextDecorations="Underline"></TextBlock>
+                <Grid Grid.Row="17">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Quốc gia:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textQuocGiaGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Tỉnh/Thành phố:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTinhThanhPhoGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Quận/Huyện:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textQuanHuyenGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="1">
+                        <DockPanel>
+                            <TextBlock Text="Phường/Xã:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textPhuongXaGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="19">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Số nhà, đường phố:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textSoNhaDuongPhoGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Mã vùng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textMaVungGiaoHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Địa chỉ đơn hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textDiaChiDonHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Grid.Row="21" Text="Thông tin bổ sung" FontSize="20" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0" TextDecorations="Underline"></TextBlock>
+                <Grid Grid.Row="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Tài khoản ngân hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textTaiKhoanNganHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Mở tại ngân hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textMoTaiNganHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="23">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Ngày thành lập:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNgayThanhLap" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Là khách hàng từ:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textLaKhachHangTu" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="24">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Doanh thu:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textDoanhThu" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Quy mô nhân sự:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textQuyMoNhanSu" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Xếp hạng khách hàng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textXepHangKhachHang" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Website:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textWebsite" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="26">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Hạn mức nợ:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textHanMucNo" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Số ngày được nợ:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textSoNgayDuocNo" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Grid.Row="27" Text="Thông tin mô tả" FontSize="20" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0" TextDecorations="Underline"></TextBlock>
+                <DockPanel Grid.Row="28" Margin="20,20,0,20">
+                    <TextBlock Text="Mô tả:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock x:Name="textMoTa" Text="Chưa cập nhật" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #aaa}" Margin="15,0,0,0"></TextBlock>
+                </DockPanel>
+            </Grid>
+        </Border>
+        <Border Margin="15,15,15,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" CornerRadius="10,10,0,0" Height="50" Background="{DynamicResource #4C5BD4}">
+                    <TextBlock Text="Thông tin hệ thống" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="15,0,0,0"></TextBlock>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Người tạo:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <DockPanel HorizontalAlignment="Right">
+                                <Path Data="{DynamicResource iconNguoi3}" Fill="{DynamicResource #2A38A2}" Margin="0,0,7,0"></Path>
+                                <TextBlock Text="" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                            </DockPanel>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Ngày tạo:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNgayTao" Text="Mã khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Người sửa:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <DockPanel HorizontalAlignment="Right">
+                                <Path Data="{DynamicResource iconNguoi3}" Fill="{DynamicResource #2A38A2}" Margin="0,0,7,0"></Path>
+                                <TextBlock Text="" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                            </DockPanel>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Ngày sửa:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock x:Name="textNgaySua" Text="Mã khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Đơn vị:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock Text="Chưa cập nhật." FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Loại hình:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <DockPanel HorizontalAlignment="Right">
+                                <Path Data="{DynamicResource iconSua}" Fill="{DynamicResource #2A38A2}" Margin="0,0,7,0"></Path>
+                                <TextBlock x:Name="textLoaiHinh2" Text="Mã khách hàng:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                            </DockPanel>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Ngày giao dịch gần nhất:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock Text="Chưa cập nhật." FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="20,20,0,0">
+                        <DockPanel>
+                            <TextBlock Text="Ngày mua hàng gần nhất:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock Text="Chưa cập nhật." FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20,20,0,0" Grid.Column="0">
+                        <DockPanel>
+                            <TextBlock Text="Dùng chung:" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                            <Path x:Name="icondungChung" Data="{DynamicResource iconDungChung}" VerticalAlignment="Center" HorizontalAlignment="Right" Stroke="{DynamicResource #34B632}"></Path>
+                            <!--<TextBlock Text="Chưa cập nhật." FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" HorizontalAlignment="Right"></TextBlock>-->
+                        </DockPanel>
+                        <TextBlock Text="-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"></TextBlock>
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+        </Border>
+        <Border CornerRadius="10,10,0,0" Height="50" Background="{DynamicResource #4C5BD4}" Margin="15,15,15,0">
+            <TextBlock Text="Nhật ký" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="15,0,0,0"></TextBlock>
+        </Border>
+        <ListView x:Name="lsvNhatKy" Margin="15,0,15,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding created_at}" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock Text="{Binding content}" FontSize="15"></TextBlock>
+                    </StackPanel>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Height="45"></StackPanel>
+    </StackPanel>
+</Page>

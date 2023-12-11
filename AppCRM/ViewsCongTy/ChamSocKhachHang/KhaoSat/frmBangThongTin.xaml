@@ -1,0 +1,51 @@
+﻿<Window x:Class="AppCRM.Views.ChamSocKhachHang.KhaoSat.frmBangThongTin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.ChamSocKhachHang.KhaoSat"
+        mc:Ignorable="d"
+        Title="frmBangThongTin" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid Style="{DynamicResource DataGrid1}" Margin="0,10,0,0" x:Name="dgv" ScrollViewer.CanContentScroll="True" MaxHeight="700">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{DynamicResource textSTT}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding STT}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTenKH}" Width="*" MinWidth="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Cursor="Hand" Text="{Binding TenKhachHang}" FontSize="15" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textSDT}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SDT}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textEmail}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Email}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textDiaChi}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DiaChi}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Height="45"></StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,259 @@
+﻿<Page x:Class="AppCRM.Views.QuanLyThuChi.formThemSanPham"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.QuanLyThuChi"
+      mc:Ignorable="d"
+      Title="formThemSanPham" Height="1387.253" Width="1580.123">
+
+    <Grid Margin="15,15,15,165">
+        <Border CornerRadius="5" Margin="0,0,0,10">
+            <DockPanel Margin="0,0,-0.4,169.2">
+                <StackPanel Margin="22,0" VerticalAlignment="Top" Width="680" Height="996">
+                    <TextBlock Text="{DynamicResource textThongTinSP}" FontWeight="Bold" FontSize="16" Margin="18 16 0 12"></TextBlock>
+                    <Border Height="944" Width="680" Margin="0 0 0 16" Padding="22 18" BorderBrush="{DynamicResource #666666}" BorderThickness="1" CornerRadius="5">
+                        <StackPanel Margin="-0.4,-0.2,-0.2,-8.4">
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textMaSP}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <Border Height="41" Background="{DynamicResource #E9ECEF}" CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <TextBox Padding="12 6" VerticalAlignment="Center" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapMaSP}" FontSize="15" IsReadOnly="True" BorderThickness="0" Background="Transparent"></TextBox>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textTenSP1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput1" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapTenSP}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput1, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textNhomSP}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <ComboBox Height="41" FontSize="15" Padding="12 6" Style="{StaticResource Combobox2}"></ComboBox>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textDVTinh1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput3" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapDVTinh}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput3, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textKichThuoc1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput4" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapKichThuoc}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput4, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textDinhMucTonToiThieu}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput5" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapDinhMucTonToiThieu}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput5, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textGiaNhap1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput6" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapGiaNhap}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput6, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textGiaBanLe1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput7" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="0" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput7, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textGiaBanLe1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput8" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="0" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput8, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textGiaBanBuon1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput9" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="0" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput9, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textBaoHanh1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput10" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapBaoHanh}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput10, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textHanSD}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <DatePicker Style="{StaticResource DatePicker1}" Height="41" VerticalAlignment="Center"></DatePicker>
+                            </Border>
+                            <TextBlock Margin="4 0 0 5" Text="{DynamicResource textXuatXu1}" Style="{StaticResource TextRowLeft}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" FontSize="16"></TextBlock>
+                            <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #CCCCCC}">
+                                <!--  <TextBox Height="41" FontSize="15" Padding="12 6" Background="Transparent" BorderThickness="0"></TextBox>-->
+                                <Grid>
+                                    <TextBox Height="41" x:Name="tbInput11" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0 0 0.5 0" Padding="10"/>
+                                    <TextBlock Background="Transparent" Padding="10" FontSize="15" Foreground="{DynamicResource #666}" Text="{DynamicResource textNhapXuatXu1}" IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbInput11, Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Margin="16 0 22 0" Height="623" Width="623">
+                    <TextBlock Text="{DynamicResource textHinhAnhSP1}" FontWeight="Bold" FontSize="16" Margin="18 16 0 12"></TextBlock>
+                    <Border Padding="22 22 22 0" Height="543" Width="623" BorderBrush="{DynamicResource #666666}" BorderThickness="1" CornerRadius="5">
+                        <Grid>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Border Width="111" Height="87">
+                                    <Path VerticalAlignment="Center" HorizontalAlignment="Center" Data="{DynamicResource iconTraLaiHangBan}" Stroke="{DynamicResource #474747}"></Path>
+                                </Border>
+                                <Border Margin="0 21 0 0" Width="109" Height="38" Background="{DynamicResource #4C5BD4}" CornerRadius="10" Cursor="Hand">
+                                    <TextBlock FontSize="14" Style="{StaticResource TextRowCenter}" FontWeight="Bold" Foreground="{DynamicResource #FFFFFF}" Text="{DynamicResource textTaiLen}"></TextBlock>
+                                </Border>
+                                <TextBlock Text="{DynamicResource textKeoTha}" FontSize="14" Foreground="{DynamicResource #666666}"></TextBlock>
+                            </StackPanel>
+                            <Border Cursor="Hand" Background="Transparent" Margin="0 250 20 0" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Path Data="{DynamicResource iconEdit}" Fill="{DynamicResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <!--button save and cancel-->
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 22 0 30">
+            <Border Margin="0 0 66 0" BorderBrush="{DynamicResource #4C5BD4}" BorderThickness="1" CornerRadius="5" Width="200" Height="40" Cursor="Hand" Background="{DynamicResource #F7F8FC}">
+                <TextBlock Text="{DynamicResource textHuy}" Foreground="{DynamicResource #4C5BD4}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+            <Border Margin="0 0 66 0" CornerRadius="5" Width="200" Height="40" Background="{DynamicResource #4C5BD4}" Cursor="Hand">
+                <TextBlock Text="{DynamicResource textSave}" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Page>

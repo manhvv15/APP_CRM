@@ -1,0 +1,28 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.Email.frmCaiDatEmail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.Email"
+        mc:Ignorable="d"
+        Title="frmCaiDatEmail" Height="450" Width="800">
+    <StackPanel>
+        <DockPanel Margin="20,0,0,0">
+            <StackPanel Cursor="Hand">
+                <TextBlock x:Name="textEmailCaNhan" MouseLeftButtonUp="textEmailCaNhan_MouseLeftButtonUp" Text="Email cá nhân" Margin="20,15,0,0" FontSize="15" Foreground="{DynamicResource #474747}"></TextBlock>
+                <Line x:Name="lineEmailCN" Margin="0,10,0,0" X1="0" Y1="0" X2="130" Y2="0" Stroke="LightSlateGray" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+            </StackPanel>
+            <StackPanel Cursor="Hand">
+                <TextBlock x:Name="textEmailMarketing" MouseLeftButtonUp="textEmailMarketing_MouseLeftButtonUp" Text="Email Marketing" Margin="12,15,0,0" FontSize="15" Foreground="{DynamicResource #474747}"></TextBlock>
+                <Line x:Name="lineEmailMarketing" Margin="0,10,0,0" X1="0" Y1="0" X2="130" Y2="0" Stroke="LightSlateGray" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+
+            </StackPanel>
+            <StackPanel Cursor="Hand">
+                <TextBlock x:Name="textEmailHeThong" MouseLeftButtonUp="textEmailHeThong_MouseLeftButtonUp" Text="Email hệ thống" Margin="15,15,0,0" FontSize="15" Foreground="{DynamicResource #474747}"></TextBlock>
+                <Line x:Name="lineEmailHeThong" Margin="0,10,0,0" X1="0" Y1="0" X2="130" Y2="0" Stroke="LightSlateGray" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+
+            </StackPanel>
+        </DockPanel>
+        <StackPanel x:Name="pnlHienThi"></StackPanel>
+    </StackPanel>
+</Window>

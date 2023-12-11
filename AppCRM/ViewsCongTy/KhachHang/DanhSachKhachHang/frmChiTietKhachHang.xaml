@@ -1,0 +1,124 @@
+﻿<Window x:Class="AppCRM.Views.KhachHang.DanhSachKhachHang.frmChiTietKhachHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHang"
+        mc:Ignorable="d"
+        Title="frmChiTietKhachHang" Height="2300" Width="1125">
+    <StackPanel Background="{DynamicResource #f7f8fc}">
+        <WrapPanel>
+            <Border Cursor="Hand" x:Name="btnThongTinChiTiet" MouseLeftButtonUp="btnThongTinChiTiet_MouseLeftButtonUp" Width="147" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textThongTinChiTiet" Text="Thông tin chi tiết" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnLienHe" MouseLeftButtonUp="btnLienHe_MouseLeftButtonUp" Width="78" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textLienHe" Text="Liên hệ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnCoHoi" MouseLeftButtonUp="btnCoHoi_MouseLeftButtonUp" Width="72" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textCoHoi" Text="Cơ hội" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnChienDich" MouseLeftButtonUp="btnChienDich_MouseLeftButtonUp" Width="101" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textChienDich" Text="Chiến dịch" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnBaoGia" MouseLeftButtonUp="btnBaoGia_MouseLeftButtonUp" Cursor="Hand" Width="78" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textBaoGia" Text="Báo giá" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnLichSuDonHang" MouseLeftButtonUp="btnLichSuDonHang_MouseLeftButtonUp" Width="147" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textLichSuDonHang" Text="Lịch sử đơn hàng" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnHopDongBan" MouseLeftButtonUp="btnHopDongBan_MouseLeftButtonUp" Width="126" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textHopDongBan" Text="Hợp đồng bán" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnHangHoaDaMua" MouseLeftButtonUp="btnHangHoaDaMua_MouseLeftButtonUp" Cursor="Hand" Width="153" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textHangHoaDaMua" Text="Hàng hoá đã mua" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnHoaDon" MouseLeftButtonUp="btnHoaDon_MouseLeftButtonUp" Cursor="Hand" Width="87" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textHoaDon" Text="Hoá đơn" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnLichHen" MouseLeftButtonUp="btnLichHen_MouseLeftButtonUp" Cursor="Hand" Width="87" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textLichHen" Text="Lịch hẹn" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnCuocGoi" MouseLeftButtonUp="btnCuocGoi_MouseLeftButtonUp" Cursor="Hand" Width="89" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textCuocGoi" Text="Cuộc gọi" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnLichSuChamSoc" MouseLeftButtonUp="btnLichSuChamSoc_MouseLeftButtonUp" Cursor="Hand" Width="150" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textLichSuChamSoc" Text="Lịch sử chăm sóc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnEmail" MouseLeftButtonUp="btnEmail_MouseLeftButtonUp" Cursor="Hand" Width="62" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textEmail" Text="Email" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnSMS" MouseLeftButtonUp="btnSMS_MouseLeftButtonUp" Cursor="Hand" Width="55" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textSMS" Text="SMS" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnTaiLieuDinhKem" MouseLeftButtonUp="btnTaiLieuDinhKem_MouseLeftButtonUp" Cursor="Hand" Width="147" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textTaiLieuDinhKem" Text="Tài liệu đính kèm" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnGhiChu" MouseLeftButtonUp="btnGhiChu_MouseLeftButtonUp" Cursor="Hand" Width="80" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textGhiChu" Text="Ghi chú" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border x:Name="btnDanhSachChiaSe" MouseLeftButtonUp="btnDanhSachChiaSe_MouseLeftButtonUp" Cursor="Hand" Width="156" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textDanhSachChiaSe" Text="Danh sách chia sẻ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" x:Name="btnDanhSachTinDang" MouseLeftButtonUp="btnDanhSachTinDang_MouseLeftButtonUp" Width="156" Height="36" Margin="20,15,0,0" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <TextBlock x:Name="textDanhSachTinDang" Text="Danh sách tin đăng" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #474747}"></TextBlock>
+            </Border>
+        </WrapPanel>
+        <StackPanel x:Name="pnlHienThi" Margin="20,15,20,0">
+            
+        </StackPanel>
+    </StackPanel>
+</Window>

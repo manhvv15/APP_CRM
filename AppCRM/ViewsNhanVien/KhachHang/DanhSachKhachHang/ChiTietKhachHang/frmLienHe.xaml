@@ -1,0 +1,521 @@
+﻿<Page x:Class="AppCRM.Views.KhachHang.DanhSachKhachHangNhanVien.ChiTietKhachHangNhanVien.frmLienHeNhanVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHangNhanVien.ChiTietKhachHangNhanVien"
+        mc:Ignorable="d"
+        Title="frmLienHeNhanVien" Height="450" Width="2000">
+    <StackPanel x:Name="pnlHienThi" Background="{DynamicResource #f7f8fc}">
+        <DockPanel>
+            <Border Margin="15,15,0,0" Background="{DynamicResource #FFFFFF}" Height="40" Width="400" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="{DynamicResource #666666}" CornerRadius="10">
+                <Grid>
+                    <TextBox x:Name="tbSearch" Margin="20 0 0 0" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" BorderThickness="0"></TextBox>
+                    <TextBlock Margin="20,8,65,8" Text="Tìm kiếm theo tên người liên hệ" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" IsHitTestVisible="False">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=tbSearch,Path=Text}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <Border Cursor="Hand" x:Name="btnTimKiem" HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center" MouseLeftButtonUp="btnTimKiem_MouseLeftButtonUp" Background="{DynamicResource #FFFFFF}">
+                        <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}"></Path>
+                    </Border>
+                </Grid>
+
+            </Border>
+            <Border x:Name="btnThemMoiLienHe" MouseLeftButtonUp="btnThemMoiLienHe_MouseLeftButtonUp" Cursor="Hand" Background="{DynamicResource #4C5BD4}" Width="138" Height="36" CornerRadius="10" Margin="0,0,15,0" HorizontalAlignment="Right">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="22,8,0,8">
+                    <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Left"></Path>
+                    <TextBlock Margin="10 0 0 0" Text="{DynamicResource textThem}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="DemiBold"></TextBlock>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+        <DataGrid Style="{DynamicResource DataGrid1}" x:Name="dgv" ScrollViewer.CanContentScroll="True" Margin="0,15,0,0" SelectionChanged="dgv_SelectionChanged" LoadingRow="dgv_LoadingRow" PreviewMouseWheel="dgv_PreviewMouseWheel">
+            <DataGrid.Columns>
+                <!--<DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Header="{DynamicResource textSTT}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding stt}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textLoaiLienHe}" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<TextBlock Text="{Binding contact_type}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>-->
+                            <DockPanel HorizontalAlignment="Center">
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,2,3,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,2,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,3,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,2,3">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="2,3,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,2">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,3">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="2,3">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="2,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="3,4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="1">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #043379}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNguoi4}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="2">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #FF3333}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconLichHenLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="3">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #34B632}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconOtoLienHe}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                <Border >
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding contact_type}" Value="4">
+                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border Width="26" Height="26" CornerRadius="26" Background="{DynamicResource #666}" Margin="5,0,0,0">
+                                            <Path Data="{DynamicResource iconNgoiSao1}" Stroke="{DynamicResource #FFFFFF}"></Path>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                            </DockPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textHoVaTen}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="textHoVaTen" MouseLeftButtonUp="textHoVaTen_MouseLeftButtonUp" Cursor="Hand" Text="{Binding fullname}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #4C5BD4}" FontWeight="DemiBold"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn Header="Danh sách họ tên">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Cursor="Hand" Text="{Binding HoVaTen}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #4C5BD4}" FontWeight="DemiBold" ItemsSource="{Binding dsHoTen}"></ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Header="{DynamicResource textXungHo}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding vocative}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn Header="{DynamicResource textNhomKH}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox Style="{DynamicResource Combobox2}" Height="30" BorderThickness="0"></ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Header="{DynamicResource textChucDanh}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding titles}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textDienThoaiCoQuan}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding office_phone}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textEmailCoQuan}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding office_email}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textDienThoaiCaNhan}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding personal_phone}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textEmailCaNhan}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding personal_email}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textZalo}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding zalo}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textFacebook}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding facebook}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textChucNang}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Menu Background="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <MenuItem Header="{DynamicResource textThaoTac}" FontSize="15" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #4C5BD4}" BorderThickness="0" FontWeight="DemiBold">
+                                        <MenuItem.Icon>
+                                            <Path Data="{DynamicResource iconBaChamDoc}" Fill="{DynamicResource #4C5BD4}"></Path>
+                                        </MenuItem.Icon>
+                                        <MenuItem x:Name="btnChinhSua" Header="{DynamicResource textChinhSua}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="35" Foreground="{DynamicResource #474747}" FontWeight="DemiBold" Click="btnChinhSua_Click">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconSua}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem x:Name="btnXoa" Header="{DynamicResource textXoa}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="35" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Click="btnXoa_Click">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconXoa}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </MenuItem>
+                                </Menu>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DockPanel Margin="0,15,0,0">
+
+            <DockPanel Margin="10,0,0,5">
+                <TextBlock FontFamily="Roboto" Text="Hiển thị: " VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold"></TextBlock>
+                <ComboBox x:Name="cboPhanTrang" Cursor="Hand" Style="{DynamicResource Combobox2}" Text="10 bản ghi trên trang" FontSize="16" VerticalAlignment="Center" Margin="0,-4,0,0">
+                    <ComboBoxItem Content="10 bản ghi trên trang" IsSelected="True" FontSize="16"></ComboBoxItem>
+                    <ComboBoxItem Content="20 bản ghi trên trang" FontSize="16"></ComboBoxItem>
+                    <ComboBoxItem Content="30 bản ghi trên trang" FontSize="16"></ComboBoxItem>
+                    <ComboBoxItem Content="40 bản ghi trên trang" FontSize="16"></ComboBoxItem>
+                    <ComboBoxItem Content="50 bản ghi trên trang" FontSize="16"></ComboBoxItem>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel Margin="50,0,0,0" HorizontalAlignment="Center">
+                <TextBlock Text="Tổng số: " FontSize="14" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontFamily="Roboto"></TextBlock>
+                <TextBlock x:Name="textTongSoDong" Text="100" FontSize="14" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontFamily="Roboto" FontWeight="DemiBold"></TextBlock>
+                <TextBlock Text=" Liên hệ" FontSize="14" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontFamily="Roboto"></TextBlock>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Right">
+                <Border x:Name="btnDau" Cursor="Hand" Width="32" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,10,0" MouseLeftButtonUp="btnDau_MouseLeftButtonUp" Visibility="Collapsed">
+                    <TextBlock Cursor="Hand" Text="Đầu" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                </Border>
+                <Border x:Name="btnLui1" Cursor="Hand" Width="23" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Visibility="Collapsed">
+                    <Path Data="{StaticResource iconArrowLeft}" Fill="#666666" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                </Border>
+                <Border x:Name="btnPage1" Cursor="Hand" Width="23" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,0,0" MouseLeftButtonUp="btnPage1_MouseLeftButtonUp">
+                    <TextBlock x:Name="textPage1" Cursor="Hand" Width="21" Height="21" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                </Border>
+                <Border x:Name="btnPage2" Cursor="Hand" Width="23" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,0,0" MouseLeftButtonUp="btnPage2_MouseLeftButtonUp">
+                    <TextBlock x:Name="textPage2" Cursor="Hand" Width="21" Height="21" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                </Border>
+                <Border x:Name="btnPage3" Cursor="Hand" Width="23" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,0,0" MouseLeftButtonUp="btnPage3_MouseLeftButtonUp">
+                    <TextBlock x:Name="textPage3" Cursor="Hand" Width="21" Height="21" Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                </Border>
+
+                <Border x:Name="btnLen1" Cursor="Hand" Width="23" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,0,0">
+                    <Path Data="{StaticResource iconArrowRight}" Fill="#666666" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                </Border>
+                <Border x:Name="btnCuoi" Cursor="Hand" Width="32" Height="23" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="10,0,10,0" MouseLeftButtonUp="btnCuoi_MouseLeftButtonUp">
+                    <TextBlock Cursor="Hand" Text="Cuối" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+        <StackPanel Height="45"></StackPanel>
+    </StackPanel>
+</Page>

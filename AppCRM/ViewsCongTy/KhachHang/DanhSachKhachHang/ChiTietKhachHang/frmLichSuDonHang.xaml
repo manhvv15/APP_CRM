@@ -1,0 +1,221 @@
+﻿<Window x:Class="AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang.frmLichSuDonHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang"
+        mc:Ignorable="d"
+        Title="frmLichSuDonHang" Height="450" Width="1500">
+    <StackPanel x:Name="pnlHienThi">
+        <WrapPanel>
+            <Border Background="{DynamicResource #FFFFFF}" Height="36" Width="400" HorizontalAlignment="Left" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #474747}" Margin="20,15,0,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Text="Ngày đặt:" FontSize="16" Foreground="{DynamicResource #474747}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 "></TextBlock>
+                    <DatePicker FontSize="15" Style="{DynamicResource DatePicker1}"></DatePicker>
+                    <Line X1="0" Y1="1" X2="10" Y2="1" Stroke="{DynamicResource #474747}" VerticalAlignment="Center"/>
+                    <DatePicker FontSize="15" Style="{DynamicResource DatePicker1}"></DatePicker>
+                </DockPanel>
+            </Border>
+            <Border Background="{DynamicResource #FFFFFF}" Height="38" Width="250" CornerRadius="10" Margin="20,15,0,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <DockPanel VerticalAlignment="Center" >
+                    <TextBlock Text="Tình trạng:" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" Margin="5 0 "></TextBlock>
+                    <ComboBox Cursor="Hand" BorderThickness="0" Style="{StaticResource Combobox2}" Text="{DynamicResource textTatCa}" FontSize="16">
+                        <ComboBoxItem Content="{DynamicResource textTatCa}" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                    </ComboBox>
+                    <!--<Path Data="{DynamicResource iconlistdown}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" VerticalAlignment="Center"></Path>-->
+                </DockPanel>
+            </Border>
+
+        </WrapPanel>
+        <DockPanel>
+            <Grid HorizontalAlignment="Left" Margin="20,15,0,0" Width="450">
+                <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border Background="{DynamicResource #FFFFFF}" Height="40" Width="450" BorderBrush="{DynamicResource #474747}" BorderThickness="1" CornerRadius="10" >
+                    <Grid VerticalAlignment="Center" >
+                        <TextBox x:Name="tbsearchLSDH" Margin="10 0" FontSize="16" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" BorderThickness="0"></TextBox>
+                        <TextBlock Text="Tìm kiếm theo số đơn hàng, khách hàng, người thực hiện" Foreground="{DynamicResource #666666}" Margin="10 0" IsHitTestVisible="False" FontSize="16">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=tbsearchLSDH,Path=Text}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" Margin="10 0"></Path>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border x:Name="btnThemMoiLSDH" MouseLeftButtonUp="btnThemMoiLSDH_MouseLeftButtonUp" Cursor="Hand" Background="{DynamicResource #4C5BD4}" Width="138" Height="36" CornerRadius="10" Margin="0,15,20,0" HorizontalAlignment="Right">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                </Border.Effect>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="22,8,0,8">
+                    <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Left"></Path>
+                    <TextBlock Margin="10 0 0 0" Text="{DynamicResource textThem}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="DemiBold"></TextBlock>
+                </StackPanel>
+            </Border>
+
+        </DockPanel>
+        <DataGrid Style="{DynamicResource DataGrid1}" x:Name="dgv" ScrollViewer.CanContentScroll="True" Margin="20,15,0,0">
+            <DataGrid.Columns>
+                <!--<DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Header="{DynamicResource textSTT}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding STT}" FontWeight="DemiBold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #4C5BD4}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textSoDonHang}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SoDonHang}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTrangThai}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TrangThai}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textDienGiai}" Width="*" MinWidth="170">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DienGiai}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textGiaTri}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding GiaTri}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textNguoiThucHien1}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<TextBlock Text="{Binding NguoiTH}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                            <DockPanel>
+                                <Border Width="26" Height="26" CornerRadius="26" Background="red" VerticalAlignment="Center" Margin="20,0,20,0"></Border>
+                                <TextBlock Text="{Binding NguoiThucHien}" FontSize="15" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textNgayDatHang1}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding NgayDatHang}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTinhTrangThanhToan}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TinhTrangThanhToan}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTinhTrangGiaoHang}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TinhTrangGiaoHang}"  FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Chức năng">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Menu Background="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <MenuItem Header="{DynamicResource textThaoTac}" FontSize="15" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #4C5BD4}" BorderThickness="0">
+                                        <MenuItem.Icon>
+                                            <Path Data="{DynamicResource iconBaChamDoc}" Fill="{DynamicResource #4C5BD4}"></Path>
+                                        </MenuItem.Icon>
+                                        <MenuItem Header="{DynamicResource textDuyet}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconDuyet}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textTuChoi}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconTuChoi}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textHuy}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconHuy}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textChiaSe}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconChiaSe}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textBanGiaoCV}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconBanGiaoCV}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textSua}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconSua}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textXoa}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0" Height="40" Foreground="{DynamicResource #474747}">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconXoa}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </MenuItem>
+                                </Menu>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DockPanel>
+            <TextBlock Margin="20,15,0,0" Text="{DynamicResource textHienThi}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+
+            <ComboBox Cursor="Hand" Style="{StaticResource Combobox2}" Width="209" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,15,0,0">
+                <ComboBoxItem Style="{StaticResource ComboboxItem1}" Content="10 bản ghi trên trang"></ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboboxItem1}" Content="20 bản ghi trên trang"></ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboboxItem1}" Content="30 bản ghi trên trang"></ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboboxItem1}" Content="40 bản ghi trên trang"></ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboboxItem1}" Content="50 bản ghi trên trang"></ComboBoxItem>
+            </ComboBox>
+            <DockPanel HorizontalAlignment="Right">
+                <TextBlock Text="{DynamicResource textTongSo}" FontSize="15" VerticalAlignment="Center" Margin="7,15,0,0"></TextBlock>
+                <TextBlock x:Name="txtTongSoDong" FontSize="15" VerticalAlignment="Center" Margin="7,15,0,0" FontWeight="DemiBold"></TextBlock>
+                <TextBlock Text="Đơn hàng" FontSize="15" VerticalAlignment="Center" Margin="7,15,20,0"></TextBlock>
+            </DockPanel>
+
+
+        </DockPanel>
+        <StackPanel Height="45"></StackPanel>
+    </StackPanel>
+</Window>

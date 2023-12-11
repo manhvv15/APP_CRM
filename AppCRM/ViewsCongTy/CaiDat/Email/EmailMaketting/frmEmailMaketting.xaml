@@ -1,0 +1,58 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.Email.EmailMaketting.frmEmailMaketting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.Email.EmailMaketting"
+        mc:Ignorable="d"
+        Title="frmEmailMaketting" Height="450" Width="800">
+    <StackPanel x:Name="pnlHienThi">
+        <Border CornerRadius="10" Margin="20,15,20,0" Background="{DynamicResource #FFFFFF}">
+            <StackPanel>
+                <TextBlock Text="Thiết lập Email Marketing" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0"></TextBlock>
+                <TextBlock Text="Kết nối Email để thực hiện các chiến dịch Email Marketing" FontSize="15" Foreground="{DynamicResource #474747}" Margin="20,10,0,0"></TextBlock>
+                <DockPanel Margin="20,10,0,20">
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/Group 1000003204.png" Width="52" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock Text="ZetaMail" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border x:Name="btnKetNoiZetaMail" MouseLeftButtonUp="btnKetNoiZetaMail_MouseLeftButtonUp" Cursor="Hand" Width="124" Height="41" Background="{DynamicResource #FFFFFF}" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="15,0,0,0">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/58417f6ba6515b1e0ad75a2b 1.png" Width="60" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock Text="MailChimp" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border x:Name="btnKetNoiMailChimp" MouseLeftButtonUp="btnKetNoiMailChimp_MouseLeftButtonUp" Cursor="Hand" Width="124" Height="41" Background="White" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="15,0,0,0">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/GetResponse_Logo 1.png" Width="94" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock Text="GetResponse" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border x:Name="btnKetNoiGetRespose" MouseLeftButtonUp="btnKetNoiGetRespose_MouseLeftButtonUp" Cursor="Hand" Width="124" Height="41" Background="White" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+
+                    </Border>
+                </DockPanel>
+
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+</Window>

@@ -1,0 +1,166 @@
+﻿<Page x:Class="AppCRM.Views.QuanLyThuChi.QLSoQuy"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.QuanLyThuChi"
+      mc:Ignorable="d"
+      Title="QLSoQuy" Height="678.965" Width="1127.093">
+
+    <Grid Margin="15">
+        <StackPanel>
+            <!--search-->
+            <Border Margin="0 16 0 0" Height="40" Width="467" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Background="{DynamicResource #FFFFFF}" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="10">
+                <DockPanel VerticalAlignment="Top" HorizontalAlignment="Left" Background="Transparent" Height="40" Width="460">
+                    <Grid>
+                        <TextBox Padding="20 10" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" x:Name="tbInput1" HorizontalAlignment="Left" BorderThickness="0" Width="160" Margin="10 0 0 0"></TextBox>
+                        <TextBlock Padding="20 10" FontSize="14" Foreground="{DynamicResource #474747}" TextWrapping="Wrap" Text="{DynamicResource textTimKiem}" IsHitTestVisible="False" HorizontalAlignment="Left" Width="400" VerticalAlignment="Center" Margin="10 0 0 0">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=tbInput1, Path=Text}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <Border Cursor="Hand" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Right">
+                            <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" Width="20"></Path>
+                        </Border>
+                    </Grid>
+                </DockPanel>
+            </Border>
+            <!--end btn search-->
+
+            <!--Btn Them moi-->
+            <Border Width="153" Height="40" CornerRadius="10" Background="{DynamicResource #4C5BD4}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 16 190 0">
+                <DockPanel Width="143" Height="30" Cursor="Hand" Background="{DynamicResource #4C5BD4}">
+                    <TextBlock Text="{DynamicResource textThemMoi1}" FontSize="16" FontWeight="SemiBold" Cursor="Hand" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                </DockPanel>
+            </Border>
+            <!--end btn them moi-->
+
+            <!--Table-->
+            <DataGrid Name="datagrid1" Style="{StaticResource DataGrid1}" VerticalAlignment="Top" Margin="0 20 0 20" ItemsSource="{Binding LayDLSoQuy}" >
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border Width="{Binding ElementName=datagrid1,Path=ActualWidth}" Height="{Binding ElementName=datagrid1,Path=ActualHeight}" CornerRadius="10" Background="White"></Border>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="{DynamicResource textTenSoQuy}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource TextRowCenter}" Text="{Binding}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textSoTienVND}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Style="{StaticResource TextRowCenter}" Text="{Binding}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textMoTa}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}" TextTrimming="WordEllipsis" TextWrapping="WrapWithOverflow"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textNguoiQuanLy}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textTrangThai}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textChucNang}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_Header}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_Cell}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <ComboBox BorderThickness="0" Style="{StaticResource Combobox3}">
+                                        <ComboBoxItem>
+                                            <Grid>
+                                                <Path Data="{DynamicResource iconEdit}" Fill="{DynamicResource #666666}"></Path>
+                                                <TextBlock Text="{DynamicResource textChinhSua}" Margin="25 0 0 0"></TextBlock>
+                                            </Grid>
+                                        </ComboBoxItem>
+                                        <ComboBoxItem>
+                                            <Grid>
+                                                <Path Data="{DynamicResource iconXoa}" Fill="{DynamicResource #666666}"></Path>
+                                                <TextBlock Text="{DynamicResource textXoa}" Margin="25 0 0 0"></TextBlock>
+                                            </Grid>
+                                        </ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <!--end table-->
+            <TextBlock Margin="16 0 0 0">
+                <Run Text="Tổng tiền: " FontSize="14"></Run>
+                <Run Text="5750000" FontWeight="Bold" FontSize="14"></Run>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

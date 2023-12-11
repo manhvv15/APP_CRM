@@ -1,0 +1,37 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.CaiDatTongDaiDienThoai.frmTongDaiDienThoai"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.CaiDatTongDaiDienThoai"
+        mc:Ignorable="d"
+        Title="frmTongDaiDienThoai" Height="450" Width="800">
+    <StackPanel x:Name="pnlHienThi">
+        <Border CornerRadius="10" Margin="20,0,20,0" Background="{DynamicResource #FFFFFF}">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Thiết lập tổng đài" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="20,20,0,0"></TextBlock>
+                <TextBlock Text="Kết nối tổng đài điện thoại để bán hàng tốt hơn." FontSize="15" Foreground="{DynamicResource #474747}" Margin="20,5,0,0"></TextBlock>
+                <ScrollViewer>
+                    <WrapPanel Margin="20,10,0,0">
+                        <Border Margin="0,10,0,20" Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                            </Border.Effect>
+                            <StackPanel>
+                                <Image Source="/Resource/Img/ftel-logo.png" Width="140" Height="46" Stretch="Fill" Margin="0,20,0,0"></Image>
+                                <TextBlock Text="FPT" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                                <Border x:Name="btnKetNoiTongĐaiienThoai" MouseLeftButtonUp="btnKetNoiTongĐaiienThoai_MouseLeftButtonUp" Cursor="Hand" Width="124" Height="41" Background="{DynamicResource #FFFFFF}" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                    <TextBlock Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+</Window>

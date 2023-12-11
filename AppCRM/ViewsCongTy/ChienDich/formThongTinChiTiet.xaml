@@ -1,0 +1,128 @@
+﻿<Page x:Class="AppCRM.Views.ChienDich.formThongTinChiTiet"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.ChienDich"
+      mc:Ignorable="d"
+      Title="formThongTinChiTiet" Width="1311.5" Height="870.8">
+
+    <Grid>
+        <Border>
+            <StackPanel>
+                <Border Height="50" Background="{DynamicResource #4C5BD4}" CornerRadius="10 10 0 0">
+                    <TextBlock Text="Thông tin chi tiết" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+                <Border Background="{DynamicResource #FFFFFF}" CornerRadius="0 0 10 10">
+                    <StackPanel>
+                        <DockPanel>
+                            <TextBlock Style="{StaticResource TextRowLeft}" Text="Thông tin chung" FontSize="20" FontWeight="SemiBold" TextDecorations="Underline" DockPanel.Dock="Top" Margin="10 0 0 15"></TextBlock>
+                            <StackPanel Margin="0 0 20 0">
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Tên chiến dịch:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chiến dịch bán hàng online" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Tình trạng:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Đang tạm dừng" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel>
+                                    <DockPanel Margin="0 15">
+                                        <TextBlock Text="Ngân sách:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                        <TextBlock Text="Đang tạm dừng" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                    </DockPanel>
+                                    <DockPanel HorizontalAlignment="Right">
+                                        <TextBlock Text="Doanh số" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                        <TextBlock Text="Đang tạm dừng" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                    </DockPanel>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Số đã chi:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="0 VNĐ" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            </StackPanel>
+                            <StackPanel>
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Loại:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Mạng xã hội" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Kênh truyền thông:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel>
+                                    <DockPanel Margin="0 15">
+                                        <TextBlock Text="Ngày bắt đầu:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                        <TextBlock Text="07/08/2022" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                    </DockPanel>
+                                    <DockPanel HorizontalAlignment="Right">
+                                        <TextBlock Text="Ngày kết thúc:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                        <TextBlock Text="31/08/2022" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                    </DockPanel>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Nhân viên phụ trách:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <DockPanel HorizontalAlignment="Right">
+                                        <Border Height="26" Width="26" CornerRadius="100">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="D:\work\AppCRM\Resource\Img\rafiki.png"></ImageBrush>
+                                            </Border.Background>
+                                        </Border>
+                                        <TextBlock Text="nhật minh" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                    </DockPanel>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            </StackPanel>
+                        </DockPanel>
+
+                        <TextBlock Style="{StaticResource TextRowLeft}" Text="Thông tin mô tả" FontSize="20" FontWeight="SemiBold" TextDecorations="Underline" DockPanel.Dock="Top" Margin="10 0 0 15"></TextBlock>
+                        <DockPanel Margin="0 15" HorizontalAlignment="Left">
+                            <TextBlock Text="Mô tả:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                            <TextBlock Text="Chưa cập nhật" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                        </DockPanel>
+
+                        <TextBlock Style="{StaticResource TextRowLeft}" Text="Thông tin hệ thống" FontSize="20" FontWeight="SemiBold" TextDecorations="Underline" DockPanel.Dock="Top" Margin="10 0 0 15"></TextBlock>
+                        <DockPanel>
+                            <StackPanel>
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Người tạo:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" Foreground="{DynamicResource #CCCCCC}" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Người sửa:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" Foreground="{DynamicResource #CCCCCC}" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Dùng chung:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" Foreground="{DynamicResource #CCCCCC}" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            </StackPanel>
+                            <StackPanel>
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Ngày tạo:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" Foreground="{DynamicResource #CCCCCC}" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                <DockPanel Margin="0 15">
+                                    <TextBlock Text="Ngày sửa:" FontSize="16" FontWeight="SemiBold" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                    <TextBlock Text="Chưa cập nhật" Foreground="{DynamicResource #CCCCCC}" FontSize="15" Style="{StaticResource TextRowRight}"></TextBlock>
+                                </DockPanel>
+                                <Line Margin="0 10 0 0" X1="0" Y1="0" X2="645" Y2="0" Stroke="{DynamicResource #474747}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

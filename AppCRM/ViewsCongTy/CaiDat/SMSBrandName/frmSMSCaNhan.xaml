@@ -1,0 +1,86 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.SMSBrandName.frmSMSCaNhan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.SMSBrandName"
+        mc:Ignorable="d"
+        Title="frmSMSCaNhan" Height="600" Width="800">
+    <StackPanel x:Name="pnlHienThi">
+        <Border CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,20,0">
+            <StackPanel>
+                <TextBlock Text="Thiết lập SMS" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #474747}" Margin="20,15,0,0"></TextBlock>
+                <TextBlock Text="Kết nối SMS Brand Name của doanh nghiệp bạn với CRM.TIMVIEC365.VN CRM để tăng hiệu quả bán hàng." FontSize="15" Foreground="{DynamicResource #474747}" Margin="20,0,0,0"></TextBlock>
+                <WrapPanel Margin="0,10,0,0">
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,0,15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/logo 1.png" Width="81" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock x:Name="tblKetNoiVTH" Text="VTH" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border Cursor="Hand" x:Name="btnKetNoiVTH" MouseLeftButtonUp="btnKetNoiVTH_MouseLeftButtonUp" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock x:Name="textKetNoiVTH" Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,0,15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/southtelecom 1.png" Width="60" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock x:Name="tblKetNoiStelecom" Text="SouthTelecom" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border Cursor="Hand" x:Name="btnKetNoiSTelecom" MouseLeftButtonUp="btnKetNoiSTelecom_MouseLeftButtonUp" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock x:Name="textKetNoiSTelecom" Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,0,15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/Group 1000003240.png" Width="90" Height="60" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock x:Name="tblKetNoiCMC" Text="CMC" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border Cursor="Hand" x:Name="btnKetNoiCMC" MouseLeftButtonUp="btnKetNoiCMC_MouseLeftButtonUp" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock x:Name="textKetNoiCMC" Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,0,15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <StackPanel Height="72">
+                                <Image Source="/Resource/Img/layer1.png" Width="90" Height="17" Stretch="Fill" Margin="0,20,0,0" VerticalAlignment="Top"></Image>
+                            </StackPanel>
+                            <TextBlock x:Name="tblKetNoiViettel" Text="Viettel" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border Cursor="Hand" x:Name="btnKetNoiViettel" MouseLeftButtonUp="btnKetNoiViettel_MouseLeftButtonUp" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock x:Name="textKetNoiViettel" Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+
+                    </Border>
+                    <Border Width="205" Height="205" HorizontalAlignment="Left" CornerRadius="10" Background="{DynamicResource #FFFFFF}" Margin="20,15,0,15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/Resource/Img/image0.png" Width="139" Height="46" Stretch="Fill" Margin="0,20,0,0"></Image>
+                            <TextBlock x:Name="tblKetNoiFPT" Text="FPT" FontSize="16" HorizontalAlignment="Center" FontWeight="DemiBold" Foreground="{DynamicResource #474747}" Margin="0,20,0,0"></TextBlock>
+                            <Border Cursor="Hand" x:Name="btnKetNoiFPT" MouseLeftButtonUp="btnKetNoiFPT_MouseLeftButtonUp" Width="124" Height="41" Background="White" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Margin="0,20,0,0">
+                                <TextBlock x:Name="textKetNoiFPT" Text="Kết nối" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Border>
+                        </StackPanel>
+
+                    </Border>
+                </WrapPanel>
+
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+</Window>

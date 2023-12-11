@@ -1,0 +1,97 @@
+﻿<Page x:Class="AppCRM.Views.BaoGia"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BaoGia">
+
+    <Grid>
+        <StackPanel>
+            <DockPanel Margin="10">
+                <Grid>
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" Height="36" Width="220" CornerRadius="5" Margin="10 0 10 0" >
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource textNgayBaoGia}" FontSize="16" FontWeight="Bold"></TextBlock>
+                            <DatePicker></DatePicker>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+                <Grid Margin="30 0">
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" Height="36" Width="220" CornerRadius="5" Margin="10 0 10 0" >
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="{DynamicResource textHieulucdenNgay}" FontSize="16" FontWeight="Bold"></TextBlock>
+                            <DatePicker></DatePicker>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+                <Grid >
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" Height="36" Width="220" CornerRadius="5"  >
+                        <DockPanel >
+                            <TextBlock Text="{DynamicResource textTinhTrang}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{DynamicResource textALL}" VerticalAlignment="Center" Margin="10 0"></TextBlock>
+                            <Path Data="{DynamicResource iconlistdown}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" VerticalAlignment="Center"></Path>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </DockPanel>
+            <DockPanel>
+                <Border Background="{DynamicResource #FFFFFF}" BorderThickness="1" BorderBrush="{DynamicResource #474747}" Height="36" Width="392" CornerRadius="10" HorizontalAlignment="Left">
+                    <Grid VerticalAlignment="Center" Margin="10 0">
+                        <TextBox x:Name="textbox" Margin="20 0 0 0" FontSize="14" Foreground="{DynamicResource #666666}" BorderThickness="0" VerticalAlignment="Center"></TextBox>
+                        <TextBlock Margin="20 0 0 0" Text="{DynamicResource textsearchSobaogia}" FontSize="14" Foreground="{DynamicResource #474747}" IsHitTestVisible="False">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=textbox,Path=Text}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                        <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right"></Path>
+                    </Grid>
+                </Border>
+                <Border Background="{DynamicResource #4C5BD4}" Width="138" CornerRadius="10" HorizontalAlignment="Right" Margin="10 0">
+                    <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="5 0"></Path>
+                        <TextBlock Text="{DynamicResource textThem}" Foreground="{DynamicResource #FFFFFF}" FontSize="16"></TextBlock>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DataGrid Style="{DynamicResource DataGrid1}" Margin="0 20 0 0">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Số báo giá"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Tình trạng"></DataGridTextColumn>
+                    <DataGridTextColumn Header=" Ngày báo giá"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Hiệu lực đến ngày"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Khách hàng"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Tổng tiền"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Mô tả"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Chức năng"></DataGridTextColumn>
+                </DataGrid.Columns>
+                </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

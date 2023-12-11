@@ -1,0 +1,77 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.frmCaiDat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat"
+        mc:Ignorable="d"
+        Title="frmCaiDat" Height="450" Width="822">
+    <StackPanel x:Name="pnlHienThi">
+        <Border Height="280" CornerRadius="10" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="20,0,20,0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0,0,0,105" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock Text="Cơ hội" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock Text="Quy trình bán hàng" x:Name="textQuyTrinhBanHang" MouseLeftButtonUp="textQuyTrinhBanHang_MouseLeftButtonUp" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}" Cursor="Hand"></TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Grid.Column="1">
+                        <TextBlock Text="Marketing" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textEmail" MouseLeftButtonUp="textEmail_MouseLeftButtonUp" Cursor="Hand" Text="Email" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textSMSBrànName" MouseLeftButtonUp="textSMSBrànName_MouseLeftButtonUp" Cursor="Hand" Text="Sms Brandname" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textTongDaiDienThoai" MouseLeftButtonUp="textTongDaiDienThoai_MouseLeftButtonUp" Cursor="Hand" Text="Tổng đài điện thoại" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Grid.Column="2">
+                        <TextBlock Text="Tiềm năng" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textWebform" MouseLeftButtonUp="textWebform_MouseLeftButtonUp" Cursor="Hand" Text="Webform" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Khách hàng" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textChiaSeKhachHang" MouseLeftButtonUp="textChiaSeKhachHang_MouseLeftButtonUp" Cursor="Hand" Text="Chia sẻ khách hàng" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Quản trị dữ liệu" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                        <TextBlock x:Name="textBanGiaoCongViec" MouseLeftButtonUp="textBanGiaoCongViec_MouseLeftButtonUp" Cursor="Hand" Text="Bàn giao công việc" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <!--<DockPanel Margin="0,0,0,105" Grid.RowSpan="2">
+                <StackPanel>
+                    <TextBlock Text="Cơ hội" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock Text="Quy trình bán hàng" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Marketing" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock Text="Email" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock Text="Sms Brandname" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock Text="Tổng đài điện thoại" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right">
+                    <TextBlock Text="Tiềm năng" FontSize="16" FontWeight="DemiBold" Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    <TextBlock Text="Webform" FontSize="15"  Margin="20,15,0,0" Foreground="{DynamicResource #474747}"></TextBlock>
+                    
+                </StackPanel>
+            </DockPanel>-->
+            </Grid>
+        </Border>
+
+    </StackPanel>
+</Window>

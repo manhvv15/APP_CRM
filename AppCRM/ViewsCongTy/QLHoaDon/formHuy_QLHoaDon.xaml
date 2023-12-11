@@ -1,0 +1,65 @@
+﻿<Page x:Class="AppCRM.Views.QLHoaDon.formHuy_QLHoaDon"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.QLHoaDon"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="formHuy_QLHoaDon">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent"  Width="500" Height="300">
+        <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <Border Background="Transparent">
+            <StackPanel>
+                <Border CornerRadius="10 10 0 0" Background="{DynamicResource #4C5BD4}" Height="50">
+                    <DockPanel HorizontalAlignment="Right" Width="350">
+                        <TextBlock Text="{DynamicResource textHuyHoaDon}" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <Path Data="{DynamicResource iconClose}" HorizontalAlignment="Right" VerticalAlignment="Center" Fill="{DynamicResource  #FFFFFF}" Margin="0 0 15 0"></Path>
+                    </DockPanel>
+                </Border>
+                <StackPanel Height="192" Background="{DynamicResource #FFFFFF}">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Padding="20 20 0 8">
+                        <Run Text="Lý do " FontWeight="Bold"></Run>
+                        <Run Text="*" FontWeight="Bold" Foreground="{DynamicResource #FF3333}"></Run>
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="{DynamicResource #666666}" Background="{DynamicResource #FFFFFF}" Width="458" Height="121">
+                        <DockPanel>
+                            <Grid>
+                                <TextBox FontSize="14" Foreground="{DynamicResource #474747}" x:Name="tbInput1" BorderThickness="0" Width="458" Margin="10 0 0 0"></TextBox>
+                                <TextBlock FontSize="14" Foreground="{DynamicResource #474747}" Text="{DynamicResource textNhapLyDo}" IsHitTestVisible="False" HorizontalAlignment="Left" Width="458 " Margin="10 0 0 0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tbInput1, Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                            <Border Height="36" Width="36" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent">
+                                <Path VerticalAlignment="Center" HorizontalAlignment="Center" Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" Height="20" Stretch="Fill" Width="20"></Path>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Border Margin="40 0" Height="36" Width="140" BorderBrush="{DynamicResource #4C5BD4}" BorderThickness="1" CornerRadius="5" Cursor="Hand">
+                        <TextBlock Style="{StaticResource TextRowCenter}" Text="{DynamicResource textHuy}" Foreground="{DynamicResource #4C5BD4}" FontSize="16" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <Border Margin="40 0" Background="{DynamicResource #4C5BD4}" Height="36" Width="140" CornerRadius="5">
+                        <TextBlock Style="{StaticResource TextRowCenter}" Text="{DynamicResource textDongY}" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="Bold"></TextBlock>
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

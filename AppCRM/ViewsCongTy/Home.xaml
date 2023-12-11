@@ -1,0 +1,110 @@
+﻿<Window x:Class="AppCRM.Views.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="1046" d:DesignWidth="1000"
+      Title="Home">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+        <WrapPanel VerticalAlignment="Top" Margin="0 0 0 20">
+                <Grid Margin="20 5 0 0">
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16" >
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10" Width="300" Height="auto" >
+                <StackPanel>
+                    <TextBlock Margin="25 16" Text="{DynamicResource textKhachHang}" Foreground="{StaticResource #474747}" FontWeight="Bold" FontSize="20"/>
+                    <Line X1="0" Y1="1" X2="300" Y2="1" Stroke="{DynamicResource #474747}"/>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                        <TextBlock Text="{DynamicResource texttongKH}" Margin="25 5" FontSize="16"></TextBlock>
+                        <TextBlock x:Name="textTongSoKhachHang" Text="13540" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="#FFA800" HorizontalAlignment="Left"></Border>
+                        <TextBlock Text="{DynamicResource texttongnhomKH}" Margin="25 5" FontSize="16"></TextBlock>
+                        <TextBlock Text="6" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+           </Grid>
+                <Grid Margin="20 5 0 0">
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16" Margin="30 0 0 0">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10" Width="300" Height="auto" >
+                <StackPanel >
+                            <TextBlock Margin=" 25 16" Text="{DynamicResource textdonhang}" Foreground="{StaticResource #474747}" FontWeight="Bold" FontSize="20"></TextBlock>
+                    <Line X1="0" Y1="1" X2="300" Y2="1" Stroke="{DynamicResource #474747}"/>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="{DynamicResource #4C5BD4}" HorizontalAlignment="Left"></Border>
+                        <TextBlock Text="{DynamicResource texttongHD}" Margin="25 5" FontSize="16"></TextBlock>
+                            <TextBlock Text="0" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="{DynamicResource #76B51B}"></Border>
+                            <TextBlock Text="{DynamicResource textDHtc}" Margin="25 5" FontSize="16"/>
+                            <TextBlock Text="0" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="{DynamicResource #FFA800}"></Border>
+                            <TextBlock Text="{DynamicResource textDHchuaTT}" Margin="25 5" FontSize="16"/>
+                            <TextBlock Text="0" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+         </Grid>
+                <Grid Margin="20 5 0 0">
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10" Width="300" Height="auto" >
+                <StackPanel>
+                            <TextBlock FontSize="20" Margin="25 16" Text="{DynamicResource textMaketing}" Foreground="{StaticResource #474747}" FontWeight="Bold"></TextBlock>
+                    <Line X1="0" Y1="1" X2="300" Y2="1" Stroke="{DynamicResource #474747}"/>
+                    <DockPanel Margin="10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                            <TextBlock Text="{DynamicResource textTongCD}" Margin="25 5" FontSize="16"></TextBlock>
+                            <TextBlock Text="3" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel Margin=" 10">
+                        <Border Width="14" Height="14" CornerRadius="14" Background="#FFA800" HorizontalAlignment="Left"></Border>
+                            <TextBlock Text="{DynamicResource textmail}" Margin="25 5" FontSize="16"></TextBlock>
+                            <TextBlock Text="0" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+                </Grid>
+        </WrapPanel>
+            <Grid Margin="20 10 20 0">
+                <Border Background="{DynamicResource #FFFFFF}" CornerRadius="16">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border Background="{DynamicResource #FFFFFF}" Height="700">
+                <StackPanel>
+                    <DockPanel Margin="0 10 10 10">
+                            <TextBlock Text="{DynamicResource textbaocaoDT}" FontWeight="Bold" FontSize="22" Margin="25,0,0,0"></TextBlock>
+                        <Border Background="{DynamicResource #FFFFFF}" HorizontalAlignment="Right" Width="138" Height="32" CornerRadius="10" BorderThickness="1" BorderBrush="{DynamicResource #474747}"> 
+                         </Border>
+                    </DockPanel>
+                    <Line X1="0" Y1="1" X2="1000" Y2="1" Stroke="{DynamicResource #474747}"/>
+                        
+                    </StackPanel>
+               
+            </Border>
+            </Grid>
+    </StackPanel>
+    </Grid>
+</Window>

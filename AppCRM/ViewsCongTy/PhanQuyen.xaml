@@ -1,0 +1,44 @@
+﻿<Page x:Class="AppCRM.Views.PhanQuyen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PhanQuyen">
+
+    <Grid>
+        <StackPanel>
+            <Border Background="{DynamicResource #FFFFFF}" Height="150" Width="753" CornerRadius="10">
+                <StackPanel>
+                    <Border Background="{DynamicResource #4C5BD4}" Height="50" Width="753" CornerRadius="10">
+                        <TextBlock Text="{DynamicResource textPhanQuyen}" Foreground="{DynamicResource #FFFFFF}" Margin="20 10" FontSize="16" FontWeight="Bold"></TextBlock>
+                    </Border>
+                    <DockPanel>
+                        <Border>
+                            <TextBlock Text="{DynamicResource textNV}" FontSize="16" Margin="20 25"></TextBlock>
+                        </Border>
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #474747}" BorderThickness="1" CornerRadius="10" Height="35" Width="345" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Path Data="{DynamicResource iconlistdown}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" VerticalAlignment="Center"></Path>
+                        </Border>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+            <CheckBox Margin=" 0 20 0 0">
+                <TextBlock Text="{DynamicResource textChonToanQuyen}" FontSize="16" FontStyle="Normal"></TextBlock>
+            </CheckBox>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <DataGrid Style="{DynamicResource DataGrid1}" Width="753" Margin="0 20 0 0">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Chọn quyền"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Thêm"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Sửa"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Xóa"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Xem"></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>

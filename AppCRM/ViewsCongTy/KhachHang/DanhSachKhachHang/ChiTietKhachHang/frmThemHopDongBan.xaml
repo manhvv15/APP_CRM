@@ -1,0 +1,124 @@
+﻿<Page x:Class="AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang.frmThemHopDongBan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.DanhSachKhachHang.ChiTietKhachHang"
+        mc:Ignorable="d"
+        Title="frmThemHopDongBan" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="0,10,0,0" x:Name="pnlHienThi">
+            <Border CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+                <StackPanel>
+                    <Border Height="50" CornerRadius="10,10,0,0" Background="{DynamicResource #4C5BD4}">
+                        <TextBlock Text="Thông tin hợp đồng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="20,0,0,0"></TextBlock>
+                    </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Loại hợp đồng" FontSize="15" Margin="20,20,0,0"></TextBlock>
+                            <ComboBox x:Name="cboHopDong" Cursor="Hand" Style="{DynamicResource Combobox2}" Margin="20,10,0,0" FontSize="15" SelectionChanged="cboHopDong_SelectionChanged"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Người tạo" FontSize="15" Margin="20,20,0,0"></TextBlock>
+                            <TextBox Margin="20,10,0,0" Height="36" ></TextBox>
+                        </StackPanel>
+                    </Grid>
+                    <ListView ItemsSource="{Binding lstList}" x:Name="lsvTruongTD" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseWheel="lsvTruongTD_PreviewMouseWheel">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Width="{Binding RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor},Path=ActualWidth}"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border Margin="20,20,0,0" HorizontalAlignment="Left" MinWidth="340">
+                                                <StackPanel>
+                                                    <DockPanel>
+                                                        <TextBlock x:Name="textTruongThayDoi" FontSize="15" Text="{Binding new_field}"></TextBlock>
+                                                        <TextBlock Text="*" Foreground="{DynamicResource #FF3333}" Margin="5,0,0,0" FontSize="15"></TextBlock>
+                                                    </DockPanel>
+                                                    <DockPanel>
+
+                                                        <DockPanel Grid.Column="0">
+                                                            <TextBlock Text="(Thay thế cho từ: " FontSize="15" FontWeight="DemiBold"></TextBlock>
+                                                            <TextBlock x:Name="textTuCanThayDoi" FontSize="15" FontWeight="DemiBold" Text="{Binding old_field}"></TextBlock>
+                                                            <TextBlock Text=")" FontSize="15" FontWeight="DemiBold"></TextBlock>
+                                                        </DockPanel>
+                                                        <TextBlock Grid.Column="1" x:Name="textThayTheTu" Text="Click để thay thế từ" FontSize="15" Cursor="Hand" HorizontalAlignment="Right" MouseLeftButtonUp="textThayTheTu_MouseLeftButtonUp">
+                                                            <TextBlock.Style>
+                                                                <Style>
+                                                                    <Setter Property="TextBlock.Foreground" Value="Black"/>
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                                                            <Setter Property="TextBlock.Foreground" Value="{DynamicResource #FFA800}"/>
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+
+                                                    </DockPanel>
+                                                    <DockPanel Margin="0,3,0,0">
+                                                        <TextBlock x:Name="textTuThayThe" Text="{Binding tuthaythe}" VerticalAlignment="Center" FontSize="15" Foreground="{DynamicResource #474747}"/>
+                                                        <TextBlock Text="{Binding trangthai}" Foreground="{DynamicResource #FF3333}" Margin="5,0,0,0" FontSize="15" HorizontalAlignment="Right" FontWeight="DemiBold" FontStyle="Italic"></TextBlock>
+                                                    </DockPanel>
+
+                                                    <!--<Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #aaa}">
+                                                        <Grid Height="30">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="44*"/>
+                                                                <ColumnDefinition Width="13*"/>
+                                                                <ColumnDefinition Width="362*"/>
+                                                                <ColumnDefinition Width="0*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBox x:Name="textTuThayThe" Text="{Binding tuthaythe}" Background="Transparent" Height="35" VerticalAlignment="Center" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,5,-3,-3" Padding="3,3,0,0" Grid.ColumnSpan="4" TextChanged="textTuThayThe_TextChanged"/>
+
+
+
+                                                        </Grid>
+                                                    </Border>-->
+                                                </StackPanel>
+                                            </Border>
+
+
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+
+                </StackPanel>
+            </Border>
+            <WrapPanel HorizontalAlignment="Center" Margin="0,25,15,10">
+                <Border Cursor="Hand" x:Name="bd_Huy" Width="222" Height="40" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Background="{DynamicResource #FFFFFF}" Margin="0,0,60,0" MouseLeftButtonUp="bd_Huy_MouseLeftButtonUp">
+                    <TextBlock x:Name="tbl_Huy" Text="Huỷ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                </Border>
+                <Border Cursor="Hand" x:Name="bd_XemTruocHopDong" Width="222" Height="40" CornerRadius="5" Margin="0,0,40,0" Background="{DynamicResource #4C5BD4}" MouseLeftButtonUp="bd_XemTruocHopDong_MouseLeftButtonUp">
+                    <TextBlock x:Name="tbl_XemTruoc" Text="Xem trước" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+                <Border Cursor="Hand" x:Name="bd_Luu" Width="222" Height="40" CornerRadius="5" Margin="0,0,40,0" Background="{DynamicResource #4C5BD4}" MouseLeftButtonUp="bd_Luu_MouseLeftButtonUp">
+                    <TextBlock x:Name="tbl_Luu" Text="Lưu" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+            </WrapPanel>
+            <Border Background="{DynamicResource #FFFFFF}">
+                <ListView x:Name="lsvImageHD" Margin="0,10,0,0" ItemsSource="{Binding}" HorizontalAlignment="Center" PreviewMouseWheel="lsvImageHD_PreviewMouseWheel">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" Margin="0,7,0,0"></Image>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Border>
+            <DockPanel Height="55"></DockPanel>
+        </StackPanel>
+    </Grid>
+</Page>

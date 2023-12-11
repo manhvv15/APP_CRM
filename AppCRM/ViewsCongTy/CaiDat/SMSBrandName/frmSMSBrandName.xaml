@@ -1,0 +1,24 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.SMSBrandName.frmSMSBrandName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.SMSBrandName"
+        mc:Ignorable="d"
+        Title="frmSMSBrandName" Height="450" Width="800">
+    <StackPanel>
+        <DockPanel Margin="20,0,0,0">
+            <StackPanel Cursor="Hand">
+                <TextBlock x:Name="textSMSCaNhan" MouseLeftButtonUp="textSMSCaNhan_MouseLeftButtonUp" Text="SMS cá nhân" FontSize="15" Margin="20,15,0,0"></TextBlock>
+                <Line x:Name="lineSMSlCN" Margin="0,10,0,0" X1="0" Y1="0" X2="130" Y2="0" Stroke="LightSlateGray" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+            </StackPanel>
+            <StackPanel Cursor="Hand">
+                <TextBlock x:Name="textSMSHeThong" MouseLeftButtonUp="textSMSHeThong_MouseLeftButtonUp" Text="SMS hệ thống" FontSize="15" Margin="20,15,0,0"></TextBlock>
+                <Line x:Name="lineSMSHeThong" Margin="0,10,0,0" X1="0" Y1="0" X2="130" Y2="0" Stroke="LightSlateGray" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+
+
+            </StackPanel>
+        </DockPanel>
+        <StackPanel x:Name="pnlHienThi"></StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,270 @@
+﻿<Page x:Class="AppCRM.Views.QLKhuyenMai.ChuaChay"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.QLKhuyenMai"
+      mc:Ignorable="d"
+      Title="ChuaChay" Width="1306.4" Height="673.2">
+
+    <StackPanel Margin="15">
+        <DockPanel Height="38" VerticalAlignment="Top" Margin="0 15">
+            <Grid>
+                <Border Height="38" Width="465" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border Height="38" Width="465" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                    <DockPanel VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource textLoaiKM:}" Style="{StaticResource TextRowLeft}" FontSize="14" FontWeight="SemiBold"></TextBlock>
+                        <ComboBox Style="{StaticResource Combobox2}" Height="28" Text="Tất cả khuyến mại">
+                            <ComboBoxItem  Height="30" Style="{StaticResource ComboboxItem1}">
+                                <TextBox Width="340" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left"></TextBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem Height="30" Style="{StaticResource ComboboxItem1}" Content="Tất cả khuyến mại" IsSelected="True"></ComboBoxItem>
+                        </ComboBox>
+                    </DockPanel>
+                </Border>
+            </Grid>
+            <Grid Width="183" HorizontalAlignment="Left" Margin="21 0 0 0">
+                <Border Height="38" Width="183" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border Height="38" Width="183" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                    <DockPanel VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource textNgayTao}" Style="{StaticResource TextRowLeft}" FontSize="14" FontWeight="SemiBold"></TextBlock>
+                        <DatePicker Style="{StaticResource DatePicker1}" Background="Transparent"></DatePicker>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </DockPanel>
+
+        <DockPanel Margin="0 0 0 15">
+            <Grid>
+                <!--Đổ bóng-->
+                <Border HorizontalAlignment="Left" Width="420" Height="46" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <!--search-->
+                <Border VerticalAlignment="Top" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Background="{DynamicResource #FFFFFF}" Width="420" Height="46" HorizontalAlignment="Left" CornerRadius="10">
+                    <DockPanel Height="36" VerticalAlignment="Center">
+                        <Grid>
+                            <TextBox FontSize="14" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" x:Name="tbInput1" HorizontalAlignment="Left" BorderThickness="0" Width="300" Margin="10 0 0 0"></TextBox>
+                            <TextBlock FontSize="14" Foreground="{DynamicResource #474747}" Text="{DynamicResource textSearchKM}" IsHitTestVisible="False" HorizontalAlignment="Left" Width="300 " VerticalAlignment="Center" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tbInput1, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                        <Border Height="36" Width="36" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent">
+                            <Path VerticalAlignment="Center" HorizontalAlignment="Center" Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" Height="20" Stretch="Fill" Width="20"></Path>
+                        </Border>
+                    </DockPanel>
+                </Border>
+            </Grid>
+            <!--btn them moi-->
+            <Border Height="37" Width="137" CornerRadius="10" Background="{DynamicResource #4C5BD4}" HorizontalAlignment="Right" Cursor="Hand">
+                <DockPanel Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Path Data="{DynamicResource iconCong}" Fill="{DynamicResource #FFFFFF}" Margin="0 0 5 0" VerticalAlignment="Center"></Path>
+                    <TextBlock Text="{DynamicResource textThem}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+
+        <DataGrid Name="datagrid1" Style="{StaticResource DataGrid1}" VerticalAlignment="Top" Margin="0 0 0 20" ItemsSource="{Binding LayDLChinhSachGia}" >
+            <DataGrid.OpacityMask>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Border Width="{Binding ElementName=datagrid1,Path=ActualWidth}" Height="{Binding ElementName=datagrid1,Path=ActualHeight}" CornerRadius="10" Background="White"></Border>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </DataGrid.OpacityMask>
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{DynamicResource textMaCTKM}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTenCTKM}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock FontWeight="SemiBold" Text="{Binding}" Style="{StaticResource TextRowLeft}" TextWrapping="WrapWithOverflow" TextTrimming="WordEllipsis" Cursor="Hand"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textLoaiKM}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock FontWeight="SemiBold" Text="{Binding}" Style="{StaticResource TextRowLeft}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textNgayBD}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textNgayKT}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textTrangThai}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Path Data="{DynamicResource iconNguoi1}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center"></Path>
+                                <TextBlock Text="{Binding}" Style="{StaticResource TextRowLeft}" Margin="30 0 10 0" TextWrapping="WrapWithOverflow"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource textChucNang}">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_Header}"/>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_Cell}"/>
+                    </DataGridTemplateColumn.CellStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Menu Background="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <MenuItem Header="{DynamicResource textThaoTac}" FontSize="15" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #4C5BD4}" BorderThickness="0">
+                                        <MenuItem.Icon>
+                                            <Path Data="{DynamicResource iconBaChamDoc}" Fill="{DynamicResource #4C5BD4}"></Path>
+                                        </MenuItem.Icon>
+                                        <MenuItem Header="{DynamicResource textKichHoat}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconKichHoat}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textChinhSua}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconSua}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{DynamicResource textXoa}" FontSize="15" Background="{DynamicResource #FFFFFF}" BorderThickness="0">
+                                            <MenuItem.Icon>
+                                                <Path Data="{DynamicResource iconXoa}" Stroke="{DynamicResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </MenuItem>
+                                </Menu>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <DockPanel>
+            <DockPanel HorizontalAlignment="Left">
+                <TextBlock Style="{StaticResource TextRowLeft}" Text="{DynamicResource textHienThi}" FontWeight="SemiBold" FontSize="16"></TextBlock>
+                <Grid>
+                    <Border Width="250" Height="36" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.1"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border Width="250" Height="36">
+                        <ComboBox Style="{StaticResource Combobox2}" Text="10 bản ghi trên trang" FontSize="16">
+                            <ComboBoxItem Content="10 bản ghi trên trang" IsSelected="True" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                            <ComboBoxItem Content="20 bản ghi trên trang" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                            <ComboBoxItem Content="30 bản ghi trên trang" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                            <ComboBoxItem Content="40 bản ghi trên trang" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                            <ComboBoxItem Content="50 bản ghi trên trang" Style="{StaticResource ComboboxItem1}"></ComboBoxItem>
+                        </ComboBox>
+                    </Border>
+                </Grid>
+            </DockPanel>
+            <DockPanel Width="300" Height="37" Margin="300 0 0 0" VerticalAlignment="Center">
+                <TextBlock FontSize="16" Style="{StaticResource TextRowCenter}">
+                    <Run Text="Tổng số:"></Run>
+                    <Run Text="17" FontWeight="Bold"></Run>
+                    <Run Text="Chương trình khuyến mại"></Run>
+                </TextBlock>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Right">
+                <Border Height="21" Width="21" CornerRadius="4" BorderBrush="{DynamicResource #666666}" BorderThickness="1" Cursor="Hand" Margin="2.5">
+                    <Path Data="{DynamicResource iconArrowLeft}" Fill="{DynamicResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                </Border>
+                <Border Height="21" Width="21" CornerRadius="4" Background="{DynamicResource #4C5BD4}" Cursor="Hand" Margin="2.5">
+                    <TextBlock Text="1" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+                <Border Height="21" Width="21" CornerRadius="4" BorderBrush="{DynamicResource #666666}" BorderThickness="1" Cursor="Hand" Margin="2.5">
+                    <TextBlock Text="2" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource #666666}"></TextBlock>
+                </Border>
+                <Border Height="21" Width="21" CornerRadius="4" BorderBrush="{DynamicResource #666666}" BorderThickness="1" Cursor="Hand" Margin="2.5">
+                    <Path Data="{DynamicResource iconArrowRight}" Fill="{DynamicResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+    </StackPanel>
+</Page>

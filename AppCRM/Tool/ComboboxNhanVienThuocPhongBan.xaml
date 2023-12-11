@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AppCRM.Tool.ComboboxNhanVienThuocPhongBan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppCRM.Tool"
+             mc:Ignorable="d" 
+             d:DesignHeight="28" d:DesignWidth="372">
+    <Grid>
+        <ComboBox Visibility="Hidden" Style="{DynamicResource Combobox2}" x:Name="cbx" FontSize="15" SelectionChanged="cbx_SelectionChanged" IsEditable="True">
+            
+        </ComboBox>
+        <Border BorderThickness="1" BorderBrush="{DynamicResource #474747}" MouseLeftButtonUp="Border_MouseLeftButtonUp" Background="{DynamicResource #FFFFFF}">
+            <TextBlock FontSize="15" x:Name="text" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

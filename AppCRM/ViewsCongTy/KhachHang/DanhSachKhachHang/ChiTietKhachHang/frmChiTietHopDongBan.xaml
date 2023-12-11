@@ -1,0 +1,50 @@
+﻿<Page x:Class="AppCRM.ViewsCongTy.KhachHang.DanhSachKhachHang.ChiTietKhachHang.frmChiTietHopDongBan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.ViewsCongTy.KhachHang.DanhSachKhachHang.ChiTietKhachHang"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="frmChiTietHopDongBan">
+
+    <StackPanel x:Name="pnlHienThi">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="650" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0" HorizontalAlignment="Right">
+                <Border Cursor="Hand" x:Name="btnGuiHopDong" Width="138" Height="36" CornerRadius="5" Background="{DynamicResource #4C5BD4}" Margin="0,0,15,0" MouseLeftButtonUp="btnGuiHopDong_MouseLeftButtonUp">
+                    <TextBlock Text="Gửi hợp đồng" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Border>
+                <Border Cursor="Hand" x:Name="btnXoaHD" Background="{DynamicResource #FF3333}" Width="138" Height="36" Margin="0,0,15,0" CornerRadius="5">
+                    <TextBlock x:Name="tbl_Huy" Text="Xoá hợp đồng" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+                <Border Cursor="Hand" x:Name="btnTaiFile" Background="{DynamicResource #FFFFFF}" Width="138" Height="36" BorderThickness="1" BorderBrush="{DynamicResource #474747}" CornerRadius="5">
+                    <TextBlock Text="Xuất file" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                </Border>
+            </DockPanel>
+            <StackPanel Grid.Row="1">
+                <Border Height="50" CornerRadius="10,10,0,0" Background="{DynamicResource #4C5BD4}">
+                    <TextBlock Text="Thông tin hợp đồng" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+                </Border>
+                <ScrollViewer HorizontalAlignment="Center" x:Name="scrollImageHD" Height="600">
+                    <ListView x:Name="lsvImageHD" BorderThickness="0" ItemsSource="{Binding lstBI}" PreviewMouseWheel="lsvImageHD_PreviewMouseWheel">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border>
+                                    <StackPanel>
+                                        <Image Source="{Binding}" Margin="0,7,0,0"></Image>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </StackPanel>
+            
+        </Grid>
+        <StackPanel Height="55"></StackPanel>
+    </StackPanel>
+</Page>

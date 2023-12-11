@@ -1,0 +1,132 @@
+﻿<Page x:Class="AppCRM.Views.NhaCungCap.DSNhaCungCap"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views.NhaCungCap"
+      mc:Ignorable="d"
+      Title="DSNhaCungCap" Width="1108.26" Height="650.22">
+
+    <Grid Margin="15">
+        <StackPanel>
+            <DockPanel Width="1400" Margin="0 0 0 16" HorizontalAlignment="Left">
+                <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Width="557">
+                    <Border BorderBrush="{DynamicResource #666666}" Height="45" Width="467" HorizontalAlignment="Left" BorderThickness="1" CornerRadius="10">
+                        <Grid Height="45">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="0*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Height="35" Width="420" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="tbInput1" FontSize="14" Foreground="{DynamicResource #474747}" BorderThickness="0" Padding="5" Margin="10 0 0 0"/>
+                            <TextBlock FontSize="14" Foreground="{DynamicResource #474747}" Text="{DynamicResource textsearchNCC}" IsHitTestVisible="False" HorizontalAlignment="Left" Width="420" VerticalAlignment="Center" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tbInput1, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <Border HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 7 0" Cursor="Hand" Background="Transparent">
+                                <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" Height="17" Width="17"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Border Background="{DynamicResource #4C5BD4}" Cursor="Hand" CornerRadius="10" Width="153" Height="40" DockPanel.Dock="Right">
+                    <TextBlock Text="{DynamicResource textThemMoi1}" FontSize="16" Style="{StaticResource TextRowCenter}" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                </Border>
+            </DockPanel>
+            <DataGrid Name="datagrid1" Style="{StaticResource DataGrid1}" VerticalAlignment="Top" Margin="0 0 0 20" ItemsSource="{Binding LayDuLieu}" >
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border Width="{Binding ElementName=datagrid1,Path=ActualWidth}" Height="{Binding ElementName=datagrid1,Path=ActualHeight}" CornerRadius="10" Background="White"></Border>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="{DynamicResource textMaNCC}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textTenNCC}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowLeft}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textSDT}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textDiaChi}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_HeaderRight}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_CellRight}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource textNhomNCC}">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGrid6_Header}"/>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGrid6_Cell}"/>
+                        </DataGridTemplateColumn.CellStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding}" Style="{StaticResource TextRowCenter}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

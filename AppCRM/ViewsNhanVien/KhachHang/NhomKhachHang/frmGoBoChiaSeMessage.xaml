@@ -1,0 +1,36 @@
+﻿<Window x:Class="AppCRM.Views.KhachHang.NhomKhachHangNhanVien.frmGoBoChiaSeMessageNhanVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.KhachHang.NhomKhachHangNhanVien"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="frmGoBoChiaSeMessageNhanVien" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" CornerRadius="5">
+            <StackPanel>
+                <Border Height="45" CornerRadius="5,5,0,0" Background="{DynamicResource #4C5BD4}">
+                    <DockPanel>
+                        <TextBlock Margin="140,0,0,0" Text="Xác nhận xoá nhóm khách hàng" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+                        <Path x:Name="btnClose" MouseLeftButtonUp="btnClose_MouseLeftButtonUp" Data="{DynamicResource iconClose}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Fill="{DynamicResource #FFFFFF}"></Path>
+                    </DockPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+        <TextBlock FontSize="16" Grid.Row="1" Text="Bạn có đồng ý xoá nhóm khách hàng này không?" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20"></TextBlock>
+        <DockPanel Grid.Row="3" HorizontalAlignment="Center">
+            <Border x:Name="btnHuy" MouseLeftButtonUp="btnHuy_MouseLeftButtonUp" Margin="0,0,30,0" Cursor="Hand" Width="140" Height="36" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}">
+                <TextBlock x:Name="tblHuy" MouseLeftButtonUp="tblHuy_MouseLeftButtonUp" Text="Huỷ" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource #4C5BD4}"></TextBlock>
+            </Border>
+            <Border Cursor="Hand" Width="140" Height="36" CornerRadius="5" Background="{DynamicResource #4C5BD4}">
+                <TextBlock Text="Đồng ý" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}"></TextBlock>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>

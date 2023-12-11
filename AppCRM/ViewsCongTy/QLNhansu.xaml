@@ -1,0 +1,236 @@
+﻿<Page x:Class="AppCRM.Views.QLNhansu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppCRM.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="QLNhansu">
+
+    <Grid>
+        <TabControl >
+            <TabItem Header="Tăng/ giảm lương" Style="{DynamicResource TabItem2}">
+                <StackPanel >
+                    <Border>
+                        <StackPanel Orientation="Horizontal" Margin="10 20 0 20" HorizontalAlignment="Center">
+                            <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" >
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="{DynamicResource  textchonNV}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Path Data="{DynamicResource iconlistdown}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" Margin="10 0 0 0 "></Path>
+                                </StackPanel>
+                            </Border>
+                            <DatePicker Width="128" Height="34" Margin="20 0 0 0"></DatePicker>
+                            <DatePicker Width="128" Height="34" Margin="20 0 0 0"></DatePicker>
+                            <Border Background="{DynamicResource #4C5BD4}" Height="29" Width="45" CornerRadius="5" Margin="35 0 0 0">
+                                <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #FFFFFF }" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+
+                    <DataGrid Style="{DynamicResource DataGrid1}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID nhân viên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Họ và tên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Chức vụ"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Phòng ban"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương ban đầu"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức tăng lương"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương giảm"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Thời gian thay đổi"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quyết định"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Bổ nhiệm, quy hoạch" Style="{DynamicResource TabItem2}">
+                <StackPanel>
+                    <Border Margin="24 0">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid>
+                                <Border Width="15" Height="15" CornerRadius="15" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                                <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource textthemBoNhiem}" Margin="10 0 0 0" FontWeight="Bold" Foreground="{DynamicResource #333333}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 10" HorizontalAlignment="Center">
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10">
+                            <TextBlock Text="{DynamicResource textchonNV}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" Margin="20 0 20 0" >
+                            <TextBlock Text="{DynamicResource textchonPB}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <DatePicker Height="34" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{DynamicResource #FFFFFF}" BorderThickness="1"  ></DatePicker>
+                        <DatePicker Height="34" Width="128" Margin="10 0 0 0"></DatePicker>
+                        <Border Background="{DynamicResource #4C5BD4}" Height="29" Width="45" CornerRadius="5" Margin="35 0 0 0">
+                            <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #FFFFFF }" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                        </Border>
+                    </StackPanel>
+                    <DataGrid Style="{DynamicResource DataGrid1}" Margin="10 20 0 0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID nhân viên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Họ và tên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Chức vụ"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Phòng ban"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương ban đầu"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức tăng lương"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương giảm"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Thời gian thay đổi"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quyết định"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Luân chuyển công tác" Style="{DynamicResource TabItem2}">
+                <StackPanel>
+                    <Border Margin="24 10 0 0 ">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid>
+                                <Border Width="15" Height="15" CornerRadius="15" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                                <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                        <TextBlock Text="{DynamicResource textthemQuyHoach}" Margin="10 0 0 0" FontWeight="Bold" Foreground="{DynamicResource #333333}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <DockPanel HorizontalAlignment="Center" Margin="10 20 10 0">
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10">
+                            <TextBlock Text="{DynamicResource textchonNV}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" Margin="20 0 20 0">
+                            <TextBlock Text="{DynamicResource textchonPB}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <DatePicker Height="34" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center"></DatePicker>
+                        <DatePicker Height="34" Width="128" Margin="20 0 0 0"></DatePicker>
+                        <Border Background="{DynamicResource #4C5BD4}" Height="29" Width="45" CornerRadius="5" Margin="35 0 0 0">
+                            <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #FFFFFF }" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                        </Border>
+                    </DockPanel>
+
+                    <DataGrid Style="{DynamicResource DataGrid1}" Margin="10 20 0 0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID nhân viên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Họ và tên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Chức vụ"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Phòng ban"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương ban đầu"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức tăng lương"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương giảm"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Thời gian thay đổi"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quyết định"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Giảm biên chế" Style="{DynamicResource TabItem2}">
+                <StackPanel>
+                    <Border Margin="24 0">
+                        <DockPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Grid>
+                                <Border Width="15" Height="15" CornerRadius="15" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                                <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                                <TextBlock Text="{DynamicResource textthemBienche}" FontWeight="Bold" Foreground="{DynamicResource #333333}"></TextBlock>
+                            </StackPanel>
+                            <Border Height="44" Width="143" Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #20744A}" BorderThickness="1" CornerRadius="10" HorizontalAlignment="Right">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Path Data="{DynamicResource iconExcel}" Stroke="{DynamicResource #20744A}"></Path>
+                                <TextBlock Text="{DynamicResource textXuatExcel}" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource #20744A}" VerticalAlignment="Center" ></TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10 20 0 0" HorizontalAlignment="Center">
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" >
+                            <TextBlock Text="{DynamicResource  textchonNV}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" Margin="20 0 20 0">
+                            <TextBlock Text="{DynamicResource textchonPB}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <DatePicker Height="34" Width="128"></DatePicker>
+                        <DatePicker Height="34" Width="128" Margin="10 0 10 0"></DatePicker>
+                        <Border Background="{DynamicResource #4C5BD4}" Height="29" Width="45" CornerRadius="5" Margin="35 0 0 0">
+                            <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #FFFFFF }" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                        </Border>
+                    </StackPanel>
+
+                    <DataGrid Style="{DynamicResource DataGrid1}" Margin="10 20 0 0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID nhân viên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Họ và tên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Chức vụ"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Phòng ban"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương ban đầu"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức tăng lương"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương giảm"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Thời gian thay đổi"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quyết định"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Nghỉ việc sai quy định" Style="{DynamicResource TabItem2}">
+                <StackPanel>
+                    <Border Margin="24 10 0 0 ">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid>
+                                <Border Width="15" Height="15" CornerRadius="15" Background="#4C5BD4" HorizontalAlignment="Left"></Border>
+                                <Path Data="{DynamicResource iconplus}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource textthemNghiviec}" Margin="10 0 0 0" FontWeight="Bold" Foreground="{DynamicResource #333333}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <DockPanel HorizontalAlignment="Center" Margin="10 20 10 0">
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10">
+                            <TextBlock Text="{DynamicResource textchonNV}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #444}" BorderThickness="1" Height="34" Width="128" CornerRadius="10" Margin="20 0 20 0">
+                            <TextBlock Text="{DynamicResource textchonPB}" Foreground="{DynamicResource #474747}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <DatePicker Height="34" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center"></DatePicker>
+                        <DatePicker Height="34" Width="128" Margin="20 0 0 0"></DatePicker>
+                        <Border Background="{DynamicResource #4C5BD4}" Height="29" Width="45" CornerRadius="5" Margin="35 0 0 0">
+                            <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #FFFFFF }" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                        </Border>
+                    </DockPanel>
+
+                    <DataGrid Style="{DynamicResource DataGrid1}" Margin="10 20 0 0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID nhân viên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Họ và tên"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Chức vụ"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Phòng ban"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương ban đầu"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức tăng lương"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Mức lương giảm"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Thời gian thay đổi"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quyết định"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Biểu đồ" Style="{DynamicResource TabItem2}">
+                <StackPanel>
+                    <Border>
+                        <StackPanel Margin="24 0" >
+                            <Border >
+                                <DockPanel>
+                                    <TextBlock Text="{DynamicResource textmoctg1}" FontSize="14" Foreground="{DynamicResource #4C5BD4}" FontWeight="Bold" VerticalAlignment="Center" ></TextBlock>
+                                    <DatePicker HorizontalAlignment="Center" Height="34" Width="205"></DatePicker>
+                                </DockPanel>
+                            </Border>
+                            <Border >
+                                <DockPanel>
+                                    <TextBlock Text="{DynamicResource textmoctg2}" FontSize="14" Foreground="{DynamicResource #4C5BD4}" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                                    <DatePicker HorizontalAlignment="Center" Width="205" Height="34"></DatePicker>
+                                </DockPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel> 
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

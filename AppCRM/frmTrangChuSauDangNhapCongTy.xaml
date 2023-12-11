@@ -1,0 +1,1752 @@
+﻿<Window x:Class="AppCRM.frmTrangChuSauDangNhapCongTy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:tool="clr-namespace:AppCRM.Tool" xmlns:core="clr-namespace:AppCRM.Core"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM"
+        mc:Ignorable="d"
+        MinWidth="780"
+        WindowStyle="None"
+        Title="Phần mềm CRM" Height="1500" Width="1100" Closing="Window_Closing" SizeChanged="Window_SizeChanged" MouseDoubleClick="Window_MouseDoubleClick" KeyUp="Window_KeyUp">
+    <Grid x:Name="formMain" MouseLeftButtonUp="formMain_MouseLeftButtonUp">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="{DynamicResource #FFFFFF}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="pnlTieuDe1" Grid.Row="0" MouseLeftButtonDown="pnlTieuDe1_MouseLeftButtonDown" Background="{DynamicResource #FFFFFF}">
+                <Path Data="{DynamicResource logoTimViec}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" Margin="5,0,0,0"></Path>
+            </Grid>
+            <DockPanel HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,5,0">
+                <Border Background="{DynamicResource #FFFFFF}" Width="25" x:Name="btnMinimize" MouseLeftButtonUp="btnMinimize_MouseLeftButtonUp">
+                    <Path Data="{DynamicResource iconMiniMize}" Stroke="{DynamicResource #666666}" VerticalAlignment="Center"></Path>
+                </Border>
+                <Border Background="{DynamicResource #FFFFFF}" Margin="0,0,5,0" Width="25" x:Name="btnMaximize" MouseLeftButtonUp="btnMaximize_MouseLeftButtonUp">
+                    <Path Data="{DynamicResource iconMaximize}" Stroke="{DynamicResource #666666}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                </Border>
+                <Border x:Name="btnNomal" MouseLeftButtonUp="btnNomal_MouseLeftButtonUp" VerticalAlignment="Center" Margin="0,0,5,0" Visibility="Collapsed" Width="25" Background="{DynamicResource #FFFFFF}">
+                    <Path Data="{DynamicResource iconMaximize1}" Fill="{DynamicResource #666666}"></Path>
+                </Border>
+                <Border x:Name="btnClose" MouseLeftButtonUp="btnClose_MouseLeftButtonUp" Background="{DynamicResource #FFFFFF}" Width="25" Margin="0,0,5,0">
+                    <Path Data="{DynamicResource iconClose}" Fill="{DynamicResource #666666}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                </Border>
+            </DockPanel>
+        </Grid>
+        <Border x:Name="pnlTieuDeThuNho" Grid.Row="1" Background="{DynamicResource #4C5BD4}" Height="45">
+            <DockPanel>
+                <Border Cursor="Hand" Background="{DynamicResource #4C5BD4}" VerticalAlignment="Center" Margin="15,0,0,0" HorizontalAlignment="Left" MouseLeftButtonUp="Border_MouseLeftButtonUp">
+                    <Path Data="{DynamicResource iconBaDuongKeNgang}" Fill="{DynamicResource #FFFFFF}"></Path>
+                </Border>
+                <DockPanel HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Background="{DynamicResource #4C5BD4}" Cursor="Hand" x:Name="iconMessagerThuNho" VerticalAlignment="Center" Margin="50,0,0,0" MouseLeftButtonUp="iconMessagerThuNho_MouseLeftButtonUp">
+                            <Path Data="{DynamicResource iconMessager}" Fill="{DynamicResource #FFFFFF}"></Path>
+
+                        </Border>
+                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="65,0,0,25">
+                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Border Background="{DynamicResource #4C5BD4}" Cursor="Hand" x:Name="iconNhacNhoThuNho" VerticalAlignment="Center" Margin="50,0,0,0" MouseLeftButtonUp="iconNhacNhoThuNho_MouseLeftButtonUp">
+                            <Path Data="{DynamicResource iconNhacNho}" Fill="{DynamicResource #FFFFFF}"></Path>
+                        </Border>
+                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="65,0,0,25">
+                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Border x:Name="iconThongBaoThuNho" MouseLeftButtonUp="iconThongBaoThuNho_MouseLeftButtonUp" Cursor="Hand" Background="{DynamicResource #4C5BD4}" VerticalAlignment="Center" Margin="50,0,0,0">
+                            <Path  Data="{DynamicResource iconThongBao}" Fill="{DynamicResource #FFFFFF}"></Path>
+                        </Border>
+                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="61,6,-8,7">
+                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </Grid>
+                    <Border Cursor="Hand" Background="{DynamicResource #4C5BD4}" x:Name="iconCaiDatThuNho" VerticalAlignment="Center" Margin="50,0,20,0" MouseLeftButtonUp="iconCaiDatThuNho_MouseLeftButtonUp">
+                        <Path  Data="{DynamicResource iconCaiDat}" Fill="{DynamicResource #FFFFFF}"></Path>
+
+                    </Border>
+                </DockPanel>
+            </DockPanel>
+        </Border>
+        <Grid Grid.Row="2" x:Name="pnlShowPopup">
+            <DockPanel>
+                <DockPanel>
+                    <Grid x:Name="pnlMenuDoc" Width="312" HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="1"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollViewer Grid.Row="0">
+                            <StackPanel Background="{DynamicResource #4C5BD4}">
+                                <Border>
+                                    <StackPanel>
+                                        <DockPanel Height="88" Background="{DynamicResource #4C5BD4}">
+                                            <Border Width="50" Height="50" HorizontalAlignment="Left" Margin="15,0,0,0" CornerRadius="10000">
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="{Binding PathImage}">
+                                                    </ImageBrush>
+                                                </Border.Background>
+                                            </Border>
+                                            <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                                                <TextBlock Text="{Binding DataCompany.com_name}" FontSize="16" Foreground="White" x:Name="textTenCongTy" FontWeight="DemiBold" TextWrapping="Wrap"></TextBlock>
+                                                <!--<TextBlock x:Name="textChucVuNV" Text="Nhân viên" FontSize="14" Foreground="White"></TextBlock>-->
+                                            </StackPanel>
+                                        </DockPanel>
+                                        <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #ced4da}" StrokeThickness="2" Canvas.Top="20" Canvas.Left="10" />
+
+                                    </StackPanel>
+                                </Border>
+                                <Border Cursor="Hand" x:Name="btnTrangChu2" MouseLeftButtonUp="btnTrangChu2_MouseLeftButtonUp" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Data="{DynamicResource iconTrangChu}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="15,0,0,0"></Path>
+                                        <TextBlock Text="Trang chủ" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White" FontWeight="DemiBold"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Phân quyền-->
+                                <Border Cursor="Hand" x:Name="btnPhanQuyen" MouseLeftButtonUp="btnPhanQuyen_MouseLeftButtonUp" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path  Margin="15,0,0,0" Data="{DynamicResource iconPhanQuyen}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Phân quyền" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuPhanQuyenCon" Visibility="Collapsed">
+                                    <Border x:Name="btnThietLapQuyen" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textThietLapQuyen" Margin="55,0,0,0" Text="Thiết lập quyền" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnBoNhiemQuyHoach" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textBoNhiemQuyHoach" Margin="55,0,0,0" Text="Bổ nhiệm, quy hoạch" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+
+                                </StackPanel>
+                                <!--Thông tin khách hàng-->
+                                <Border Cursor="Hand" x:Name="menuKhachHang" MouseLeftButtonUp="menuKhachHang_MouseLeftButtonUp" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconKhachHang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Thông tin khách hàng" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuKhachHangCon" Visibility="Collapsed">
+                                    <Border x:Name="btnDanhSachKhachHang" MouseLeftButtonUp="btnDanhSachKhachHang_MouseLeftButtonUp" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line x:Name="lineSMSlCN" Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textDanhSachKhachHang" Margin="55,0,0,0" Text="Danh sách khách hàng" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnNhomKhachHang" MouseLeftButtonUp="btnNhomKhachHang_MouseLeftButtonUp" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textNhomKhachHang" Margin="55,0,0,0" Text="Nhóm khách hàng" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnTinhTrangKhachHang" MouseLeftButtonUp="btnTinhTrangKhachHang_MouseLeftButtonUp" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+
+                                            <TextBlock x:Name="textTinhTrangKhachHang" Margin="55,0,0,0" Text="Tình trạng khách hàng" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="menuNhapLieu" MouseLeftButtonUp="menuNhapLieu_MouseLeftButtonUp" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textNhapLieu" Margin="55,0,0,0" Text="Nhập liệu" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                                <!--Chăm sóc khách hàng-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuChamSocKhachHang" MouseLeftButtonUp="menuChamSocKhachHang_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconChamSocKH}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Chăm sóc khách hàng" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuChamSocKH" Visibility="Collapsed">
+                                    <Border x:Name="btnKhaoSat" Height="50" VerticalAlignment="Center" MouseLeftButtonUp="btnKhaoSat_MouseLeftButtonUp">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textKhaoSat" Margin="55,0,0,0" Text="Khảo sát" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnLichChamSocKH" Height="50" VerticalAlignment="Center" MouseLeftButtonUp="btnLichChamSocKH_MouseLeftButtonUp">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textLichChamSocKH" Margin="55,0,0,0" Text="Lịch chăm sóc khách hàng" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnLichHen" Height="50" VerticalAlignment="Center" MouseLeftButtonUp="btnLichHen_MouseLeftButtonUp_1">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textLichHen" Margin="55,0,0,0" Text="Lịch hẹn" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center" x:Name="btnTongDai" MouseLeftButtonUp="btnTongDai_MouseLeftButtonUp">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textTongDai" Margin="55,0,0,0" Text="Tổng đài" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                                <!--Hợp đồng-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuHopDong" MouseLeftButtonUp="menuHopDong_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconHopDong}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock x:Name="textHopDong" FontWeight="DemiBold" Text="Hợp đồng" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Tiềm năng-->
+                                <Border Cursor="Hand" x:Name="btnTiemNang" MouseLeftButtonUp="btnTiemNang_MouseLeftButtonUp" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconTiemNang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Tiềm năng" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Cơ hội-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuCoHoi" MouseLeftButtonUp="menuCoHoi_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconCoHoi}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock x:Name="textCoHoi" FontWeight="DemiBold" Text="Cơ hội" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Chiến dịch-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuChienDich" MouseLeftButtonUp="menuChienDich_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconChienDich1}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock x:Name="textChienDich" FontWeight="DemiBold" Text="Chiến dịch" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Báo cáo-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconBaoCao2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Báo cáo" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Báo giá--> 
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconBaoGia2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Báo giá" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Quản lý khuyến mại-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconQLKhuyenMai}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Quản lý khuyến mại" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Vật tư hàng hóa -->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuVatTuHangHoa" MouseLeftButtonUp="menuVatTuHangHoa_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconChamSocKH}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Vật tư hàng hóa" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuVatTuHangHoa" Visibility="Collapsed">
+                                    <Border x:Name="btnDanhsachVatTuHH" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textDanhSachVatTuHangHoa" Margin="55,0,0,0" Text="Danh sách vật tư, hàng hóa" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnNhomVatTuHangHoa" Height="50" VerticalAlignment="Center" >
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textNhomVatTuHangHoa" Margin="55,0,0,0" Text="Nhóm vật tư, hàng hóa" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnDonViTinh" Height="50" VerticalAlignment="Center" >
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock x:Name="textDonViTinh" Margin="55,0,0,0" Text="Đơn vị tính" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                                <!--Maketing-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuMarketing" MouseLeftButtonUp="menuMarketing_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconMaketing}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Marketing" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuMarketing" Visibility="Collapsed">
+                                    <Border x:Name="btnEmail"  Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Danh sách khách hàng" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnSMS" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="SMS" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+
+                                </StackPanel>
+                                <!--Quản lý đơn hàng-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconQLDonHang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Quản lý đơn hàng" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Quản lý hóa đơn-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="45">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconQLHoaDon}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Quản lý hoá đơn" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Nhà cung cấp-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuNhaCungCap" MouseLeftButtonUp="menuNhaCungCap_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconMaketing}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Nhà cung cấp" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuNhaCungCap" Visibility="Collapsed">
+                                    <Border x:Name="btnDanhSachNhaCungCap"  Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Danh sách nhà cung cấp" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border x:Name="btnNhomNhaCungCap" Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Nhóm nhà cung cấp" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+
+                                </StackPanel>
+                                <!--Chính sách giá-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconChinhSachGia2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Chính sách giá" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Trả lại hàng bán-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconTraLaiHangBan2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Trả lại hàng bán" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Quản lý thu chi-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuQuanLyThuChi" MouseLeftButtonUp="menuQuanLyThuChi_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconQuanLyThuChi}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Quản lý thu chi" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <StackPanel x:Name="pnlMenuQuanLyThuChi" Visibility="Collapsed">
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Theo dõi thu chi" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Phiếu thu" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Phiếu chi" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Sổ quỹ" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Công nợ" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Height="50" VerticalAlignment="Center">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Line Margin="24,0,0,0" X1="3" Y1="0" X2="3" Y2="130" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10"/>
+                                            <TextBlock Margin="55,0,0,0" Text="Sản phẩm" Cursor="Hand" FontSize="15" Foreground="White" VerticalAlignment="Center" FontWeight="DemiBold"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                                <!--Dữ liệu đã xóa-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconDuLieuDaXoa}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Dữ liệu đã xoá" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Cài đặt-->
+                                <Border Cursor="Hand" Grid.Column="1" Height="50" x:Name="menuCaiDat" MouseLeftButtonUp="menuCaiDat_MouseLeftButtonUp">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconCaiDat}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock x:Name="textCaiDat" FontWeight="DemiBold" Text="Cài đặt" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                                <!--Sản phẩm-->
+                                <!--<Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconSanPham}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Sản phẩm" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>-->
+                                <!--Chuyển đổi số--> 
+                                <Border Cursor="Hand" Grid.Column="1" Height="50">
+                                    <Border.Style>
+                                        <Style>
+                                            <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                                    <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <DockPanel>
+                                        <Path Margin="15,0,0,0" Data="{DynamicResource iconChuyenDoiSo}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                                        <TextBlock FontWeight="DemiBold" Text="Chuyển đổi số 365" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="16" Foreground="White"></TextBlock>
+                                    </DockPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Line Grid.Row="1" X1="0" Y1="0" X2="0" Y2="0" Stroke="{DynamicResource #ced4da}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+
+                        <Border Cursor="Hand" Background="{DynamicResource #2A38A2}" x:Name="btnThuGonMenu" MouseLeftButtonUp="btnThuGonMenu_MouseLeftButtonUp" Grid.Row="2" Margin="0,0,8,0">
+                            <Path Data="{DynamicResource iconMuiTenDiVao}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,15,0"></Path>
+                        </Border>
+
+                    </Grid>
+                    <Grid Width="55" HorizontalAlignment="Left" x:Name="pnlIconMenuDoc">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="1"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollViewer Grid.Row="0">
+                            <StackPanel Background="{DynamicResource #4C5BD4}">
+                                <Grid Height="88">
+                                </Grid>
+                                <StackPanel>
+                                    <Border x:Name="btnTrangChu" Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconTrangChu}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconPhanQuyen}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconTiemNang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border x:Name="btnKhachHang" MouseLeftButtonUp="btnKhachHang_MouseLeftButtonUp" Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconKhachHang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconCoHoi}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconBaoGia2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconQLDonHang}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconQLHoaDon}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconHopDong}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconQLKhuyenMai}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconChienDich1}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconMaketing}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconChamSocKH}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconSanPham}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconChinhSachGia2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconTraLaiHangBan2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconQuanLyThuChi}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconBaoCao2}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconDuLieuDaXoa}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconCaiDat}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+                                    <Border Cursor="Hand" Height="50">
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="{DynamicResource #4C5BD4}"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="{DynamicResource #2A38A2}" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Path Data="{DynamicResource iconChuyenDoiSo}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                    </Border>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Line Grid.Row="1" X1="0" Y1="0" X2="0" Y2="0" Stroke="{DynamicResource #FFFFFF}" StrokeThickness="3" Canvas.Top="20" Canvas.Left="10" />
+
+                        <Grid Grid.Row="2" Cursor="Hand" Background="{DynamicResource #2A38A2}" x:Name="btnHienThiMenu" MouseLeftButtonUp="btnHienThiMenu_MouseLeftButtonUp" Margin="0,0,8,0">
+                            <Border HorizontalAlignment="Center">
+                                <Path Data="{DynamicResource iconMuiTenDiRa}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"></Path>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </DockPanel>
+
+                <Grid Background="{DynamicResource #f7f8fc}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1227*"/>
+                        <RowDefinition Height="185*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="417*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.ColumnSpan="2" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="pnlTieuDe" Grid.Row="0" Height="57" CornerRadius="10" Margin="20,20,20,0" Background="{DynamicResource #FFFFFF}">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                            </Border.Effect>
+                            <DockPanel>
+                                <TextBlock Text="Trang chủ" x:Name="textDuongDan" FontSize="18" FontWeight="DemiBold" VerticalAlignment="Center" Margin="20,0,0,0" Foreground="{DynamicResource #474747}" MouseLeftButtonUp="textDuongDan_MouseLeftButtonUp"></TextBlock>
+                                <DockPanel HorizontalAlignment="Right">
+                                    <Grid>
+                                        <Border Background="{DynamicResource #FFFFFF}" Cursor="Hand" x:Name="iconMessager" MouseLeftButtonUp="iconMessager_MouseLeftButtonUp" VerticalAlignment="Center" Margin="50,0,0,0">
+                                            <Path Data="{DynamicResource iconMessager}" Fill="{DynamicResource #666666}"></Path>
+
+                                        </Border>
+                                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="65,0,0,25">
+                                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Border Background="{DynamicResource #FFFFFF}" Cursor="Hand" x:Name="iconNhacNho" MouseLeftButtonUp="iconNhacNho_MouseLeftButtonUp" VerticalAlignment="Center" Margin="50,0,0,0">
+                                            <Path Data="{DynamicResource iconNhacNho}" Fill="{DynamicResource #666666}"></Path>
+
+                                        </Border>
+                                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="65,0,0,25">
+                                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="11*"/>
+                                            <RowDefinition Height="8*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Cursor="Hand" Background="{DynamicResource #FFFFFF}" x:Name="iconThongBao" MouseLeftButtonUp="iconThongBao_MouseLeftButtonUp" VerticalAlignment="Center" Margin="50,15.5,0,15.5" Grid.RowSpan="2">
+                                            <Path  Data="{DynamicResource iconThongBao}" Fill="{DynamicResource #666666}"></Path>
+                                        </Border>
+                                        <Border Visibility="Collapsed" Width="19" Height="19" Background="{DynamicResource #FF3333}" CornerRadius="19" Margin="61,6,-8,7">
+                                            <TextBlock Text="1" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                    <Border Cursor="Hand" Background="{DynamicResource #FFFFFF}" x:Name="iconCaiDat" MouseLeftButtonUp="iconCaiDat_MouseLeftButtonUp" VerticalAlignment="Center" Margin="50,0,20,0">
+                                        <Path  Data="{DynamicResource iconCaiDat}" Fill="{DynamicResource #666666}"></Path>
+
+                                    </Border>
+                                </DockPanel>
+                            </DockPanel>
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <ScrollViewer x:Name="scrollMain" Margin="0,10,0,0">
+                                <Grid x:Name="pnlHienThi" Grid.ColumnSpan="2">
+
+                                </Grid>
+                            </ScrollViewer>
+                            <tool:LoadKH x:Name="LoadAppCRM" Visibility="Collapsed"></tool:LoadKH>
+                            <ListView x:Name="lsvThongBao" ItemsSource="{Binding test}" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="430" MaxHeight="500" HorizontalAlignment="Right" Margin="0,0,20,0" Visibility="Collapsed" Background="Transparent" SelectionChanged="lsvThongBao_SelectionChanged" VerticalAlignment="Top">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Width="{Binding RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListViewItem">
+                                                    <Border Background="White" Height="130" Width="410" CornerRadius="5" Margin="10,10,0,5">
+                                                        <Border.Effect>
+                                                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                                        </Border.Effect>
+                                                        <Grid Margin="10,0,0,0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="25"></RowDefinition>
+                                                                <RowDefinition Height="60"></RowDefinition>
+                                                                <RowDefinition></RowDefinition>
+                                                            </Grid.RowDefinitions>
+                                                            <Border Grid.Row="0" x:Name="btnThoatThongBao" HorizontalAlignment="Right" Margin="0,8,8,0" MouseLeftButtonUp="btnThoatThongBao_MouseLeftButtonUp" Background="{DynamicResource #FFFFFF}">
+                                                                <Path Data="{DynamicResource iconClose}" Fill="{DynamicResource #FF3333}"></Path>
+                                                            </Border>
+                                                            <WrapPanel Grid.Row="1">
+                                                                <TextBlock>
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock">
+                                                                            <Setter Property="Text" Value="Khách hàng "></Setter>
+                                                                            <Setter Property="FontSize" Value="15"></Setter>
+                                                                            <Setter Property="Margin" Value="0,15,0,0"></Setter>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding content}" Value="1">
+                                                                                    <Setter Property="Text" Value="Bạn có khách hàng "></Setter>
+                                                                                    <Setter Property="FontSize" Value="15"></Setter>
+                                                                                    <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                <!--<TextBlock x:Name="textTieuDe1" Text="Khách hàng " FontSize="15" TextWrapping="Wrap"></TextBlock>-->
+
+                                                                </TextBlock>
+                                                                <TextBlock>
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock">
+                                                                            <Setter Property="Margin" Value="0,15,0,0"></Setter>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding content}" Value="1">
+                                                                                    <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                <!--<TextBlock x:Name="textTieuDe1" Text="Khách hàng " FontSize="15" TextWrapping="Wrap"></TextBlock>-->
+                                                                <TextBlock FontSize="15" Text="{Binding customerName}" TextWrapping="Wrap" Foreground="{DynamicResource #025CB4}" FontWeight="DemiBold"></TextBlock>
+
+                                                            </TextBlock>
+                                                                <TextBlock>
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock">
+                                                                            <Setter Property="Text" Value=" vừa cập nhật thông tin"></Setter>
+                                                                            <Setter Property="FontSize" Value="15"></Setter>
+                                                                            <Setter Property="Margin" Value="0,15,0,0"></Setter>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding content}" Value="1">
+                                                                                    <Setter Property="Text" Value="vừa được thêm vào nhóm khách hàng "></Setter>
+                                                                                    <Setter Property="FontSize" Value="15"></Setter>
+                                                                                    <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                <!--<TextBlock x:Name="textTieuDe1" Text="Khách hàng " FontSize="15" TextWrapping="Wrap"></TextBlock>-->
+
+                                                                </TextBlock>
+                                                                <!--<TextBlock x:Name="textTieuDe2" Text=" vừa được thêm vào nhóm khách hàng " FontSize="15" TextWrapping="Wrap"></TextBlock>-->
+                                                                <TextBlock>
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock">
+                                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding content}" Value="1">
+                                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                <!--<TextBlock x:Name="textTieuDe1" Text="Khách hàng " FontSize="15" TextWrapping="Wrap"></TextBlock>-->
+                                                                <TextBlock x:Name="textNhom" Text="{Binding groupName}" FontSize="15" Foreground="{DynamicResource #025CB4}" TextWrapping="Wrap"></TextBlock>
+                                                            </TextBlock>
+
+                                                            </WrapPanel>
+                                                            <Border x:Name="btnGoiDienNhanh" Cursor="Hand" Grid.Row="2" Width="120" Height="30" CornerRadius="7" Background="Green" HorizontalAlignment="Left" MouseLeftButtonUp="btnGoiDienNhanh_MouseLeftButtonUp" Margin="0,0,0,3">
+                                                                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                    <Path Data="{DynamicResource iconDienThoai}" Fill="{DynamicResource #FFFFFF}" Margin="0,0,14,0"></Path>
+                                                                    <TextBlock Text="Gọi ngay" FontSize="15" FontWeight="DemiBold" Foreground="White"></TextBlock>
+                                                                </DockPanel>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+                            </ListView>
+
+                            <Border Cursor="Hand" x:Name="borderQlKinhDoanh1" Width="345" CornerRadius="10,10,0,0" Background="{DynamicResource #FFFFFF}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Border Grid.Row="0" x:Name="borderQlKinhDoanh" MouseLeftButtonUp="borderQlKinhDoanh_MouseLeftButtonUp" CornerRadius="10,10,0,0" Background="{DynamicResource #2A38A2}">
+                                        <DockPanel>
+                                            <TextBlock Text="Trợ lý kinh doanh" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+                                            <Path x:Name="btnCloseTroLyKinhDoanh" Data="{DynamicResource iconClose}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Fill="{DynamicResource #FFFFFF}" Visibility="Collapsed"></Path>
+                                        </DockPanel>
+                                    </Border>
+                                    <ScrollViewer Grid.Row="1">
+                                        <StackPanel>
+                                            <Grid x:Name="pnlQlKinhDoanh" MouseLeftButtonUp="pnlQlKinhDoanh_MouseLeftButtonUp" Visibility="Collapsed">
+
+                                                <StackPanel>
+                                                    <DockPanel>
+                                                        <StackPanel>
+                                                            <TextBlock Text="Số điện thoại" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <Grid VerticalAlignment="Top" Width="auto" Height="37" Margin="10,5,-0.4,0">
+                                                                <Border Width="350" HorizontalAlignment="Left" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}">
+                                                                    <Grid Height="37">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="37*"/>
+                                                                            <ColumnDefinition Width="312*"/>
+                                                                            <ColumnDefinition Width="0*"/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <TextBox Background="Transparent" Height="37" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="tb_SoDienThoai" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3" TextChanged="tb_SoDienThoai_TextChanged"/>
+                                                                        <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="{DynamicResource textNhapSDT}" IsHitTestVisible="False" HorizontalAlignment="Left" Width="350" VerticalAlignment="Center" Margin="8,6,-10,11" Grid.ColumnSpan="3">
+                                                                            <TextBlock.Style>
+                                                                                <Style TargetType="TextBlock">
+                                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                                    <Style.Triggers>
+                                                                                        <DataTrigger Binding="{Binding ElementName=tb_SoDienThoai, Path=Text}" Value="">
+                                                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                                                        </DataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </TextBlock.Style>
+                                                                        </TextBlock>
+                                                                    </Grid>
+
+                                                                </Border>
+                                                            </Grid>
+                                                        </StackPanel>
+                                                        <Border x:Name="btnGoiDien" Width="35" Height="35" CornerRadius="10000" VerticalAlignment="Bottom" MouseLeftButtonUp="btnGoiDien_MouseLeftButtonUp">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush>
+                                                                    <GradientStop Color="LightGreen" Offset="0.3"></GradientStop>
+                                                                    <GradientStop Color="LawnGreen" Offset="1.0"></GradientStop>
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+                                                            <Path Data="{DynamicResource iconDienThoai}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                                                        </Border>
+                                                    </DockPanel>
+                                                    <StackPanel>
+                                                        <TextBlock Text="Tên khách hàng" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                        <Grid VerticalAlignment="Top" Width="auto" Height="37" Margin="10,5,-0.4,0">
+                                                            <Border Width="510" HorizontalAlignment="Left" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}">
+                                                                <Grid Height="37">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="37*"/>
+                                                                        <ColumnDefinition Width="312*"/>
+                                                                        <ColumnDefinition Width="0*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <TextBox TextChanged="tb_TenKhachHang_TextChanged" FocusableChanged="tb_TenKhachHang_FocusableChanged" MouseLeftButtonUp="tb_TenKhachHang_MouseLeftButtonUp" Background="Transparent" Height="37" Width="510" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="tb_TenKhachHang" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="{DynamicResource textNhapTenKH}" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,6,0,11" Grid.ColumnSpan="2">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=tb_TenKhachHang, Path=Text}" Value="">
+                                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                </Grid>
+                                                            </Border>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                    <StackPanel>
+                                                        <TextBlock Text="Email khách hàng" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                        <Grid VerticalAlignment="Top" Width="auto" Height="37" Margin="10,5,-0.4,0">
+                                                            <Border Width="510" HorizontalAlignment="Left" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #aaa}">
+                                                                <Grid Height="37">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="37*"/>
+                                                                        <ColumnDefinition Width="312*"/>
+                                                                        <ColumnDefinition Width="0*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <TextBox Background="Transparent" Height="37" Width="510" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="tb_EmailKH" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,3,0,0" Grid.ColumnSpan="3"/>
+                                                                    <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập email khách hàng" IsHitTestVisible="False" HorizontalAlignment="Left" Width="480" VerticalAlignment="Center" Margin="8,6,0,11" Grid.ColumnSpan="2">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=tb_EmailKH, Path=Text}" Value="">
+                                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                </Grid>
+                                                            </Border>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                    <StackPanel>
+                                                        <TextBlock Text="Mô tả khách hàng" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                        <Border BorderThickness="1" CornerRadius="5" BorderBrush="{DynamicResource #aaa}" Margin="10,0,12,0">
+                                                            <TextBox x:Name="tb_MoTaKH" FontSize="15" Background="Transparent" Height="150" BorderThickness="0"></TextBox>
+                                                        </Border>
+                                                    </StackPanel>
+                                                    <StackPanel>
+                                                        <TextBlock Text="Nội dung cuộc gọi" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                        <Border BorderThickness="1" CornerRadius="5" BorderBrush="{DynamicResource #aaa}" Margin="10,0,10,0">
+                                                            <TextBox FontSize="15" Background="Transparent" Height="150" BorderThickness="0" x:Name="tb_NoiDungCuocGoi"></TextBox>
+                                                        </Border>
+                                                    </StackPanel>
+                                                    <WrapPanel>
+                                                        <StackPanel>
+                                                            <TextBlock Text="Nhóm khách hàng cha" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <ComboBox FontSize="16" Text="Chọn nhóm khách hàng" Style="{DynamicResource Combobox2}" Background="Transparent" Width="245" Margin="10,0,0,0" x:Name="cboNhomKHCha" SelectionChanged="cboNhomKHCha_SelectionChanged" IsEditable="True">
+                                                            </ComboBox>
+                                                        </StackPanel>
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock Text="Nhóm khách hàng con" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <ComboBox FontSize="16" Text="Chọn nhóm khách hàng" Style="{DynamicResource Combobox2}" Background="Transparent" Width="245" Margin="10,0,0,0" x:Name="cboNhomKHCon" IsEditable="True">
+                                                            </ComboBox>
+                                                        </StackPanel>
+                                                        <StackPanel>
+                                                            <TextBlock Text="Tình trạng khách hàng" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <ComboBox FontSize="16" Text="Chọn tình trạng khách hàng" Style="{DynamicResource Combobox2}" Background="Transparent" Width="245" Margin="10,0,0,0" x:Name="cboTinhTrangKH" IsEditable="True">
+                                                            </ComboBox>
+                                                        </StackPanel>
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock Text="Nguồn khách hàng" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <ComboBox FontSize="16" Text="Chọn nguồn khách hàng" Style="{DynamicResource Combobox2}" Background="Transparent" Width="245" Margin="10,0,0,0" x:Name="cboNguonKH" IsEditable="True">
+                                                            </ComboBox>
+                                                        </StackPanel>
+                                                        <StackPanel>
+                                                            <TextBlock Text="Lịch hẹn từ ngày" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <Border BorderThickness="1" BorderBrush="{DynamicResource #aaa}" CornerRadius="5" Margin="10,0,0,0" Width="245">
+                                                                <DatePicker x:Name="dtpTuNgay" BorderThickness="2" Height="35" Style="{DynamicResource DatePicker1}" FontSize="16" Background="Transparent" Width="245"></DatePicker>
+                                                            </Border>
+                                                        </StackPanel>
+                                                        <StackPanel Margin="10,0,0,0">
+                                                            <TextBlock Text="Đến ngày" Margin="10,10,0,0" FontSize="16" FontWeight="DemiBold" Foreground="{DynamicResource #474747}"></TextBlock>
+                                                            <Border BorderThickness="1" BorderBrush="{DynamicResource #aaa}" CornerRadius="5" Margin="10,0,0,0" Width="245">
+                                                                <DatePicker x:Name="dtpDenNgay" BorderThickness="2" Height="35" Style="{DynamicResource DatePicker1}" FontSize="16" Background="Transparent" Width="245"></DatePicker>
+                                                            </Border>
+                                                        </StackPanel>
+                                                    </WrapPanel>
+                                                    <Border x:Name="btnLuu" Background="{DynamicResource #4C5BD4}" Width="104" Height="36" HorizontalAlignment="Right" Margin="0,15,40,10" CornerRadius="10" MouseLeftButtonUp="btnLuu_MouseLeftButtonUp">
+                                                        <TextBlock Text="Lưu" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="15" FontWeight="DemiBold"></TextBlock>
+                                                    </Border>
+                                                </StackPanel>
+                                                <ListView x:Name="lsvSDT" Background="{DynamicResource #FFFFFF}" MaxHeight="300" Width="450" Visibility="Collapsed" Margin="10,72,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15" SelectionChanged="lsvSDT_SelectionChanged"></ListView>
+
+                                            </Grid>
+                                        </StackPanel>
+                                    </ScrollViewer>
+
+                                </Grid>
+
+                            </Border>
+
+                            <Border x:Name="testCaiDat" Width="315" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Collapsed" Margin="0,5,40,0" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <Border Width="150" Height="150" CornerRadius="150" Margin="0,15,0,0" Cursor="Hand">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{Binding PathImage}">
+                                            </ImageBrush>
+                                        </Border.Background>
+
+                                    </Border>
+                                    <TextBlock Text="{Binding DataCompany.com_name}" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                                    <DockPanel Background="{DynamicResource #FFFFFF}" Margin="0,24,0,0" Cursor="Hand">
+                                        <Path Data="{DynamicResource iconHuongDanSuDung}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                        <TextBlock Text="Hướng dẫn sử dụng" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                        <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                                    </DockPanel>
+                                    <DockPanel x:Name="btnThongTinCaNhan" Background="{DynamicResource #FFFFFF}" Margin="0,24,0,0" Cursor="Hand" MouseLeftButtonUp="btnThongTinCaNhan_MouseLeftButtonUp">
+                                        <Path Data="{DynamicResource iconThongTinCaNhan}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                        <TextBlock Text="Thông tin cá nhân" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                        <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                                    </DockPanel>
+                                    <DockPanel x:Name="btnDangXuat" Background="{DynamicResource #FFFFFF}" Margin="0,24,0,15" Cursor="Hand" MouseLeftButtonUp="btnDangXuat_MouseLeftButtonUp">
+                                        <Path Data="{DynamicResource iconDangXuat}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                        <TextBlock Text="Đăng xuất" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                        <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                                    </DockPanel>
+                                </StackPanel>
+
+                            </Border>
+                            <Border Visibility="Collapsed" x:Name="testThongBao" Width="448" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,115,0" CornerRadius="10">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="Khách hàng" FontSize="15" Margin="20,10,0,0"></TextBlock>
+                                    <ListView x:Name="lsvHienThiThongBao" ItemsSource="{Binding LstThongBao}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock FontSize="16" Text="{Binding title}"></TextBlock>
+                                                    <TextBlock FontSize="16" Text="{Binding message}"></TextBlock>
+                                                    <TextBlock FontSize="14" Text="{Binding time}"></TextBlock>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                    <TextBlock Text="Xác nhận tất cả" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                                </StackPanel>
+                            </Border>
+                            <Border Visibility="Collapsed" x:Name="testNhacNho" Width="448" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,190,0" CornerRadius="10">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="Nhắc nhở" FontSize="15" Margin="20,10,0,0"></TextBlock>
+                                    <ListView x:Name="mb"></ListView>
+                                    <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                    <TextBlock Text="Xác nhận tất cả" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                                </StackPanel>
+                            </Border>
+                            <Border x:Name="testMessager" Width="340" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,265,0" CornerRadius="10" Visibility="Collapsed">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <DockPanel Height="35">
+                                        <TextBlock Text="Tin nhắn" FontSize="15" Margin="20,0,0,0" VerticalAlignment="Center"></TextBlock>
+                                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                                            <Path Data="{DynamicResource iconZoom}" Fill="{DynamicResource #474747}" Margin="0,0,25,0"></Path>
+                                            <Path Data="{DynamicResource iconClose}" Fill="{DynamicResource #474747}" Margin="0,0,10,0"></Path>
+
+                                        </DockPanel>
+                                    </DockPanel>
+                                    <Border Background="{DynamicResource #FFFFFF}" Height="40" BorderBrush="{DynamicResource #474747}" BorderThickness="1" CornerRadius="20" Margin="20,0,10,0">
+                                        <Grid VerticalAlignment="Center" >
+                                            <TextBox x:Name="tbsearchCH" Margin="10 0" FontSize="16" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" BorderThickness="0"></TextBox>
+                                            <TextBlock Text="Tìm kiếm trên chat" Foreground="{DynamicResource #666666}" Margin="10 0" IsHitTestVisible="False" FontSize="16">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ElementName=tbsearchCH,Path=Text}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"></Setter>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <Border x:Name="btnTimKiem" Background="{DynamicResource #FFFFFF}" Width="40" HorizontalAlignment="Right" Margin="0,0,7,0">
+                                                <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" Margin="10 0"></Path>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                    <TextBlock Text="Trò chuyện gần đây" Margin="20,5,0,5" FontSize="16"></TextBlock>
+                                    <ListView x:Name="lsvTinNhan"></ListView>
+                                    <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                                    <TextBlock Text="Xem tất cả trong tin nhắn" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                    </Grid>
+                    <Border x:Name="frmCaiDatThuNho" Width="315" HorizontalAlignment="Right" VerticalAlignment="Top"  Visibility="Collapsed" Margin="0,5,1,0" Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Border Width="150" Height="150" CornerRadius="150" Margin="0,15,0,0" Cursor="Hand">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding PathImage}"></ImageBrush>
+                                </Border.Background>
+
+                            </Border>
+                            <TextBlock Text="{Binding DataCompany.com_name}" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                            <DockPanel Background="{DynamicResource #FFFFFF}" Margin="0,24,0,0" Cursor="Hand">
+                                <Path Data="{DynamicResource iconHuongDanSuDung}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                <TextBlock Text="Hướng dẫn sử dụng" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                            </DockPanel>
+                            <DockPanel x:Name="btnThongTinCaNhanThuNho" MouseLeftButtonUp="btnThongTinCaNhanThuNho_MouseLeftButtonUp" Background="{DynamicResource #FFFFFF}" Margin="0,24,0,0" Cursor="Hand">
+                                <Path Data="{DynamicResource iconThongTinCaNhan}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                <TextBlock Text="Thông tin cá nhân" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                            </DockPanel>
+                            <DockPanel Background="{DynamicResource #FFFFFF}" Margin="0,24,0,15" Cursor="Hand" x:Name="btnDangXuatThuNho" MouseLeftButtonUp="btnDangXuatThuNho_MouseLeftButtonUp">
+                                <Path Data="{DynamicResource iconDangXuat}" Fill="{DynamicResource #474747}" Margin="15,0,0,0"></Path>
+                                <TextBlock Text="Đăng xuất" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                                <Path Data="{DynamicResource iconRightArrow1}" Stroke="{DynamicResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></Path>
+                            </DockPanel>
+                        </StackPanel>
+
+                    </Border>
+                    <Border Visibility="Collapsed" x:Name="frmThongBaoThuNho" Width="448" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,80,0" CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <TextBlock Text="Khách hàng" FontSize="15" Margin="20,10,0,0"></TextBlock>
+                            <StackPanel x:Name="pnlHienThiThongBaoThuNho"></StackPanel>
+                            <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            <TextBlock Text="Xác nhận tất cả" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                        </StackPanel>
+                    </Border>
+                    <Border Visibility="Collapsed" x:Name="frmNhacNhoThuNho" Width="448" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,155,0" CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <TextBlock Text="Nhắc nhở" FontSize="15" Margin="20,10,0,0"></TextBlock>
+                            <ListView x:Name="pnlHienThiNhacNhoThuNho"></ListView>
+                            <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            <TextBlock Text="Xác nhận tất cả" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                        </StackPanel>
+                    </Border>
+                    <Border x:Name="frmMessagerThuNho" Width="340" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{DynamicResource #FFFFFF}" Margin="0,5,235,0" CornerRadius="10" Visibility="Collapsed">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <DockPanel Height="35">
+                                <TextBlock Text="Tin nhắn" FontSize="15" Margin="20,0,0,0" VerticalAlignment="Center"></TextBlock>
+                                <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                                    <Path Data="{DynamicResource iconZoom}" Fill="{DynamicResource #474747}" Margin="0,0,25,0"></Path>
+                                    <Path Data="{DynamicResource iconClose}" Fill="{DynamicResource #474747}" Margin="0,0,10,0"></Path>
+
+                                </DockPanel>
+                            </DockPanel>
+                            <Border Background="{DynamicResource #FFFFFF}" Height="40" BorderBrush="{DynamicResource #474747}" BorderThickness="1" CornerRadius="20" Margin="20,0,10,0">
+                                <Grid VerticalAlignment="Center" >
+                                    <TextBox x:Name="tbsearchTNThuNho" Margin="10 0" FontSize="16" Foreground="{DynamicResource #474747}" VerticalAlignment="Center" BorderThickness="0"></TextBox>
+                                    <TextBlock Text="Tìm kiếm trên chat" Foreground="{DynamicResource #666666}" Margin="10 0" IsHitTestVisible="False" FontSize="16">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=tbsearchTNThuNho,Path=Text}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <Border x:Name="btnTimKiemTNThuNho" Background="{DynamicResource #FFFFFF}" Width="40" HorizontalAlignment="Right" Margin="0,0,7,0">
+                                        <Path Data="{DynamicResource iconsearch}" Fill="{DynamicResource #474747}" HorizontalAlignment="Right" Margin="10 0"></Path>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <TextBlock Text="Trò chuyện gần đây" Margin="20,5,0,5" FontSize="16"></TextBlock>
+                            <ListView x:Name="lsvTinNhanThuNho"></ListView>
+                            <Line Margin="35 15 35 0" X1="0" Y1="0" X2="400" Y2="0" Stroke="{DynamicResource #aaa}" StrokeThickness="1" Canvas.Top="20" Canvas.Left="10" />
+                            <TextBlock Text="Xem tất cả trong tin nhắn" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,0,5" FontSize="14" FontWeight="DemiBold"></TextBlock>
+
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

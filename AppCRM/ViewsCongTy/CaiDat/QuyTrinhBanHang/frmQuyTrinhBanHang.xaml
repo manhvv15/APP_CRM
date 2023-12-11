@@ -1,0 +1,119 @@
+﻿<Window x:Class="AppCRM.Views.CaiDat.QuyTrinhBanHang.frmQuyTrinhBanHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCRM.Views.CaiDat.QuyTrinhBanHang"
+        xmlns:wpfToolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:staticData="clr-namespace:AppCRM.Views.CaiDat.QuyTrinhBanHang"
+        mc:Ignorable="d"
+        Title="frmQuyTrinhBanHang" Height="450" Width="800" >
+   
+    <ScrollViewer>
+        <StackPanel>
+            <Grid>
+                <!--<Grid.Resources>
+                    <DataTemplate x:Key="SecondCellTemplate">
+                        <TextBlock Text="{Binding Path=FKName, Mode=OneWay}" />
+                    </DataTemplate>
+                    <DataTemplate x:Key="SecondCellEditingTemplate">
+                        <ComboBox DisplayMemberPath="Name"    
+                  ItemsSource="{Binding Path=Second, Mode=OneWay}"       
+                  SelectedValue="{Binding Path=FKName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"       
+                  SelectedValuePath="Name" />
+                    </DataTemplate>
+                </Grid.Resources>-->
+                <DataGrid Style="{DynamicResource DataGrid1}" x:Name="dgv" Margin="20,0,0,0" ItemsSource="{Binding lst}" SelectionChanged="dgv_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="{DynamicResource textSTT}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding stt}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Tên quy trình" Width="*" MinWidth="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding name_process}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Header="{DynamicResource textTyLeThanhCong}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <wpfToolkit:IntegerUpDown Value="{Binding Path=success_rate, UpdateSourceTrigger=PropertyChanged}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+                                    <!--<Grid VerticalAlignment="Top" Width="auto" Height="35" Margin="10,5,-0.4,0">
+                                        <Border Width="180" HorizontalAlignment="Left">
+                                            <Grid Height="35">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="37*"/>
+                                                    <ColumnDefinition Width="312*"/>
+                                                    <ColumnDefinition Width="0*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBox TextAlignment="Center" Text="{Binding TyLeThanhCong}" Background="Transparent" Height="35" Width="180" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="tb_TaiKhoan" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="0,5,10,-2" Padding="0,3,0,0" Grid.ColumnSpan="3"/>
+                                                <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập tỷ lệ thành công" IsHitTestVisible="False" HorizontalAlignment="Left" Width="180" VerticalAlignment="Center" Margin="8,5,-460,11" Grid.ColumnSpan="3">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=tb_TaiKhoan, Path=Text}" Value="">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>-->
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Header="Loại dự báo">
+                            <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                    <ComboBox Style="{DynamicResource Combobox2}" ItemsSource="{Binding DanhSachLoaiDuBao}" FontSize="15" Text="{Binding forecast_type}" IsEditable="True">
+                                    
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Header="Phân loại dự báo">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox Style="{DynamicResource Combobox2}" Text="{Binding forecast_classification}" ItemsSource="{Binding DanhSachPhanLoaiDuBao}" FontSize="15" IsEditable="True">
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Header="Chức năng">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <Path x:Name="btnThemDong" Cursor="Hand" Data="{DynamicResource iconThemMoi1}" Stroke="{DynamicResource #4C5BD4}" VerticalAlignment="Center" Margin="5,0,0,0" MouseLeftButtonUp="btnThemDong_MouseLeftButtonUp"></Path>
+                                        <Path Cursor="Hand" Data="{DynamicResource iconXoa2}" Stroke="{DynamicResource #FF3333}" VerticalAlignment="Center" Margin="30,0,0,0"></Path>
+                                        <DockPanel  Margin="30,0,0,0" Cursor="Hand">
+                                            <Path Data="{DynamicResource iconBaChamDoc}" Fill="{DynamicResource #474747}" VerticalAlignment="Center"></Path>
+                                            <Path Data="{DynamicResource iconBaChamDoc}" Fill="{DynamicResource #474747}" VerticalAlignment="Center"></Path>
+                                        </DockPanel>
+
+                                    </DockPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+            <WrapPanel Height="70" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0">
+                <Border Cursor="Hand" Width="168" Height="36" CornerRadius="10" Background="{DynamicResource #FFFFFF}" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" HorizontalAlignment="Right" Margin="0,5,30,0" VerticalAlignment="Top">
+                    <TextBlock Text="{DynamicResource textHuy}" Foreground="{DynamicResource #4C5BD4}" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Border>
+                <Border Cursor="Hand" Width="168" Height="36" CornerRadius="10" Background="{DynamicResource #4C5BD4}" HorizontalAlignment="Right" Margin="0,5,35,0" VerticalAlignment="Top">
+                    <TextBlock Text="{DynamicResource textSave}" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
